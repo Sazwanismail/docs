@@ -2,15 +2,17 @@
 title: Disabling authentication for Enterprise Managed Users
 allowTitleToDifferFromFilename: true
 shortTitle: Disable authentication
-intro: 'You can disable SAML or OIDC single sign-on (SSO) authentication for {% data variables.product.prodname_emus %} by using a recovery code to sign in as the setup user.'
+intro: You can disable SAML or OIDC single sign-on (SSO) authentication for {% data variables.product.prodname_emus %} by using a recovery code to sign in as the setup user.
 versions:
   ghec: '*'
-type: overview
-permissions: 'The setup user can disable SAML or OIDC authentication for {% data variables.product.prodname_emus %}.'
+permissions: The setup user can disable SAML or OIDC authentication for {% data variables.product.prodname_emus %}.
 redirect_from:
   - /admin/identity-and-access-management/using-enterprise-managed-users-for-iam/disabling-authentication-for-enterprise-managed-users
   - /admin/identity-and-access-management/configuring-authentication-for-enterprise-managed-users/disabling-authentication-for-enterprise-managed-users
   - /admin/identity-and-access-management/configuring-authentication-for-enterprise-managed-users/disabling-authentication-and-provisioning-for-enterprise-managed-users
+contentType: concepts
+category:
+  - Provision and manage enterprise users
 ---
 
 ## About disabled authentication for {% data variables.product.prodname_emus %}

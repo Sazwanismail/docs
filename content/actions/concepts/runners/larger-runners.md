@@ -1,6 +1,6 @@
 ---
 title: Larger runners
-intro: 'Learn about the types and uses of {% data variables.product.prodname_dotcom %}-hosted {% data variables.actions.hosted_runners %}.'
+intro: Learn about the types and uses of {% data variables.product.prodname_dotcom %}-hosted {% data variables.actions.hosted_runners %}.
 permissions: '{% data reusables.actions.larger-runner-permissions %}'
 versions:
   fpt: '*'
@@ -10,6 +10,9 @@ redirect_from:
   - /actions/using-github-hosted-runners/about-larger-runners/about-larger-runners
   - /actions/using-github-hosted-runners/using-larger-runners/about-larger-runners
   - /actions/concepts/runners/about-larger-runners
+category:
+  - Set up runners
+contentType: concepts
 ---
 
 {% ifversion ghes %}

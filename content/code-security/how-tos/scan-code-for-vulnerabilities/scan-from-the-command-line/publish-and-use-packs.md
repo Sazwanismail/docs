@@ -7,10 +7,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
-topics:
-  - Code Security
-  - Code scanning
-  - CodeQL
 redirect_from:
   - /code-security/codeql-cli/publishing-and-using-codeql-packs
   - /code-security/codeql-cli/using-the-codeql-cli/publishing-and-using-codeql-packs
@@ -146,8 +142,7 @@ query pack to download, keep in mind that when you update your version of
 also need to switch to a newer version of the query pack. Newer
 versions of {% data variables.product.prodname_codeql %} _may_ provide
 degraded performance when used with query packs that have been pinned
-to a very old version. For more information, see [About {% data variables.product.prodname_codeql %}
-pack compatibility](#about-codeql-pack-compatibility).
+to a very old version. For more information, see [AUTOTITLE](/code-security/reference/code-scanning/codeql/codeql-cli/codeql-query-packs#codeql-pack-compatibility).
 
 ## Using a {% data variables.product.prodname_codeql %} pack to analyze a {% data variables.product.prodname_codeql %} database
 

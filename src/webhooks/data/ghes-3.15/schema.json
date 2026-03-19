@@ -4610,6 +4610,11 @@
                     },
                     {
                       "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": ""
+                    },
+                    {
+                      "type": "boolean",
                       "name": "archived",
                       "description": ""
                     },
@@ -6646,6 +6651,11 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": ""
                     },
                     {
                       "type": "boolean",
@@ -8686,6 +8696,11 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": ""
                     },
                     {
                       "type": "boolean",
@@ -10738,6 +10753,11 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": ""
                     },
                     {
                       "type": "boolean",
@@ -27247,6 +27267,12 @@
                     },
                     {
                       "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
+                      "type": "boolean",
                       "name": "archived",
                       "description": "<p>Whether the repository is archived.</p>",
                       "isRequired": true,
@@ -28226,6 +28252,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "boolean",
@@ -45149,6 +45181,12 @@
                     "all",
                     "collaborators_only"
                   ]
+                },
+                {
+                  "type": "boolean",
+                  "name": "has_commit_comments",
+                  "description": "<p>Whether commit comments are enabled.</p>",
+                  "default": true
                 },
                 {
                   "type": "boolean",
@@ -74589,6 +74627,12 @@
                 },
                 {
                   "type": "boolean",
+                  "name": "has_commit_comments",
+                  "description": "<p>Whether commit comments are enabled.</p>",
+                  "default": true
+                },
+                {
+                  "type": "boolean",
                   "name": "has_downloads",
                   "description": "<p>Whether downloads are enabled.</p>",
                   "isRequired": true,
@@ -83152,6 +83196,12 @@
                     "all",
                     "collaborators_only"
                   ]
+                },
+                {
+                  "type": "boolean",
+                  "name": "has_commit_comments",
+                  "description": "<p>Whether commit comments are enabled.</p>",
+                  "default": true
                 },
                 {
                   "type": "string or null",
@@ -112201,6 +112251,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -113206,6 +113262,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -115469,6 +115531,12 @@
                     },
                     {
                       "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
+                      "type": "boolean",
                       "name": "has_pages",
                       "description": "",
                       "isRequired": true
@@ -116493,6 +116561,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -118781,6 +118855,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -119786,6 +119866,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -123079,6 +123165,12 @@
                     },
                     {
                       "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
+                      "type": "boolean",
                       "name": "archived",
                       "description": "<p>Whether the repository is archived.</p>",
                       "isRequired": true,
@@ -124058,6 +124150,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "boolean",
@@ -126764,6 +126862,12 @@
                     },
                     {
                       "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
+                      "type": "boolean",
                       "name": "archived",
                       "description": "<p>Whether the repository is archived.</p>",
                       "isRequired": true,
@@ -127743,6 +127847,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "boolean",
@@ -129677,6 +129787,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -130682,6 +130798,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -134039,6 +134161,12 @@
                     },
                     {
                       "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
+                      "type": "boolean",
                       "name": "archived",
                       "description": "<p>Whether the repository is archived.</p>",
                       "isRequired": true,
@@ -135018,6 +135146,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "boolean",
@@ -136769,6 +136903,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -137774,6 +137914,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -140057,6 +140203,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -141062,6 +141214,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -143577,6 +143735,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -144582,6 +144746,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -147869,6 +148039,12 @@
                     },
                     {
                       "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
+                      "type": "boolean",
                       "name": "archived",
                       "description": "<p>Whether the repository is archived.</p>",
                       "isRequired": true,
@@ -148848,6 +149024,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "boolean",
@@ -151554,6 +151736,12 @@
                     },
                     {
                       "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
+                      "type": "boolean",
                       "name": "archived",
                       "description": "<p>Whether the repository is archived.</p>",
                       "isRequired": true,
@@ -152533,6 +152721,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "boolean",
@@ -155239,6 +155433,12 @@
                     },
                     {
                       "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
+                      "type": "boolean",
                       "name": "archived",
                       "description": "<p>Whether the repository is archived.</p>",
                       "isRequired": true,
@@ -156218,6 +156418,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "boolean",
@@ -157919,6 +158125,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -158924,6 +159136,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -161503,6 +161721,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -162508,6 +162732,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -165086,6 +165316,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -166091,6 +166327,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -168500,6 +168742,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -169505,6 +169753,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -171838,6 +172092,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -172843,6 +173103,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -175125,6 +175391,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -176130,6 +176402,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -178408,6 +178686,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -179391,6 +179675,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -181514,6 +181804,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -182498,6 +182794,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -184642,6 +184944,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -185626,6 +185934,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -187745,6 +188059,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -188730,6 +189050,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -194312,6 +194638,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -195297,6 +195629,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -197654,6 +197992,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -198595,6 +198939,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",
@@ -201104,6 +201454,12 @@
                       ]
                     },
                     {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
+                    },
+                    {
                       "type": "string or null",
                       "name": "homepage",
                       "description": "",
@@ -202045,6 +202401,12 @@
                         "all",
                         "collaborators_only"
                       ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "has_commit_comments",
+                      "description": "<p>Whether commit comments are enabled.</p>",
+                      "default": true
                     },
                     {
                       "type": "string or null",

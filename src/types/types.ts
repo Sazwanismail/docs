@@ -56,9 +56,7 @@ export type PageFrontmatter = {
   effectiveDate?: string
   featuredLinks?: FeaturedLinks
   changelog?: ChangeLog
-  type?: string
   contentType?: string
-  topics?: string[]
   includeGuides?: string[]
   learningTracks?: string[]
   beta_product?: boolean
@@ -191,6 +189,7 @@ export type Context = {
   renderedPage?: string
   miniTocItems?: MiniTocItem[]
   markdownRequested?: boolean
+  markdownViaUrl?: boolean
 }
 export type LearningTracks = {
   [group: string]: {
@@ -388,7 +387,6 @@ export type Page = {
   complexity?: string[]
   industry?: string[]
   sidebarLink?: SidebarLink
-  type?: string
   contentType?: string
   children?: string[]
 }
@@ -504,6 +502,5 @@ export type MarkdownFrontmatter = {
   versions: FrontmatterVersions
   subcategory?: boolean
   hidden?: boolean
-  type?: string
   contentType?: string
 }
