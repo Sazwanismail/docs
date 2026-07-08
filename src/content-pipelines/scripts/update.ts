@@ -19,7 +19,7 @@
 import { execSync, execFileSync } from 'child_process'
 import fs from 'fs'
 import path from 'path'
-import yaml from 'js-yaml'
+import { load } from 'js-yaml'
 import { program } from 'commander'
 
 // ---------------------------------------------------------------------------
@@ -39,10 +39,7 @@ const CONFIG_FILE = path.join(process.cwd(), 'src/content-pipelines/config.yml')
 
 function loadConfig(id: string): ContentPipelineConfig | null {
   if (!fs.existsSync(CONFIG_FILE)) return null
-  const raw = yaml.load(fs.readFileSync(CONFIG_FILE, 'utf-8')) as Record<
-    string,
-    ContentPipelineConfig
-  >
+  const raw = load(fs.readFileSync(CONFIG_FILE, 'utf-8')) as Record<string, ContentPipelineConfig>
   return raw[id] ?? null
 }
 
@@ -222,6 +219,14 @@ async function main(): Promise<void> {
     } catch {
       nameStatus = '(unable to diff — stored SHA may have been force-pushed away)'
       diff = '(diff unavailable)'
+    }
+
+    // No source doc files changed — skip the agent.
+    if (!nameStatus.startsWith('(') && !nameStatus.trim()) {
+      console.log(
+        `No changes in ${SOURCE_PATH} between ${storedSha.slice(0, 7)} and ${currentSha.slice(0, 7)}. Skipping agent run.`,
+      )
+      return
     }
 
     diffContent = [

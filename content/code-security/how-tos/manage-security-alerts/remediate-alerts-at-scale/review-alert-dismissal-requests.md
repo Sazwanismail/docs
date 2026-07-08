@@ -5,10 +5,14 @@ intro: Triage and resolve security alerts in your organization or enterprise by 
 permissions: '{% data reusables.permissions.security-overview %}'
 product: Organizations or enterprises with {% data variables.product.prodname_GHAS_cs_or_sp %}
 versions:
-  feature: security-delegated-alert-dismissal
+  fpt: '*'
+  ghec: '*'
+  ghes: '*'
 redirect_from:
   - /code-security/security-overview/review-alert-dismissal-requests
 contentType: how-tos
+category:
+  - Secure at scale
 ---
 
 ## Prerequisites

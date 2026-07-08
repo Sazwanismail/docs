@@ -26,7 +26,7 @@ The OIDC token includes the following claims.
 | ----------- | -----| ---------------------- |
 | `aud`| Audience | By default, this is the URL of the repository owner, such as the organization that owns the repository. You can set a custom audience with a toolkit command: [`core.getIDToken(audience)`](https://www.npmjs.com/package/@actions/core/v/1.6.0) |
 | `iss`| Issuer | The issuer of the OIDC token: {% ifversion ghes %}`https://HOSTNAME/_services/token`{% else %}`https://token.actions.githubusercontent.com`{% endif %} |
-| `sub`| Subject | Defines the subject claim that is to be validated by the cloud provider. This setting is essential for making sure that access tokens are only allocated in a predictable way. |
+| `sub`| Subject | Defines the subject claim that is to be validated by the cloud provider. This setting is essential for making sure that access tokens are only allocated in a predictable way. For repositories using immutable subject claims, the `sub` format includes immutable owner and repository IDs (not available on {% data variables.product.prodname_ghe_server %}). |
 
 ### Additional standard JOSE header parameters and claims
 
@@ -163,6 +163,22 @@ You can configure a subject that includes metadata containing colons. In this ex
 
 {% endif %}
 
+## Immutable subject claims
+
+The OpenID Connect (OIDC) specification requires subject (`sub`) claims to be locally unique and never reassigned. Previously, the default `sub` format used only organization and repository names. If a namespace was recycled, a different owner could create the same subject value.
+
+To help prevent this scenario, repositories created after July 15, 2026 now use an immutable default subject format that includes both the owner ID and repository ID. This rollout does not include {% data variables.product.prodname_ghe_server %}.
+
+* Syntax: `repo:OWNER@OWNER-ID/REPO@REPO-ID:ref:refs/heads/BRANCH`
+* Previous format example: `repo:octo-org/octo-repo:ref:refs/heads/main`
+* Immutable format example: `repo:octo-org@123456/octo-repo@456789:ref:refs/heads/main`
+
+The `@` separator is used between names and IDs because `@` cannot appear in {% data variables.product.github %} usernames or repository names.
+
+Repositories created before July 15, 2026 keep the previous format unless you opt in to immutable subject claims. You can opt in at the organization or repository level by using the OIDC settings UI or REST API.
+
+Repository renames and transfers after July 15, 2026 also move to the immutable subject format.
+
 ## Configuring the subject in your cloud provider
 
 To configure the subject in your cloud provider's trust relationship, you must add the subject string to its trust configuration. The following examples demonstrate how various cloud providers can accept the same `repo:octo-org/octo-repo:ref:refs/heads/demo-branch` subject in different ways:
@@ -173,6 +189,15 @@ To configure the subject in your cloud provider's trust relationship, you must a
 | Azure| `repo:octo-org/octo-repo:ref:refs/heads/demo-branch` |
 | Google Cloud Platform| `(assertion.sub=='repo:octo-org/octo-repo:ref:refs/heads/demo-branch')` |
 | HashiCorp Vault| `bound_subject="repo:octo-org/octo-repo:ref:refs/heads/demo-branch"` |
+
+For repositories created after July 15, 2026, or that have opted in to immutable subject claims, the `sub` claim includes `owner_id` and `repo_id` as shown in the immutable examples. Update your trust policies to match the format your repository uses. Immutable subject claims are not available on {% data variables.product.prodname_ghe_server %}.
+
+| Cloud provider | Immutable format example |
+| ------ | ----------- |
+| Amazon Web Services | `"token.actions.githubusercontent.com:sub": "repo:octo-org@123456/octo-repo@456789:ref:refs/heads/demo-branch"` |
+| Azure| `repo:octo-org@123456/octo-repo@456789:ref:refs/heads/demo-branch` |
+| Google Cloud Platform| `(assertion.sub=='repo:octo-org@123456/octo-repo@456789:ref:refs/heads/demo-branch')` |
+| HashiCorp Vault| `bound_subject="repo:octo-org@123456/octo-repo@456789:ref:refs/heads/demo-branch"` |
 
 For more information about configuring specific cloud providers, see the guides listed in [AUTOTITLE](/actions/how-tos/security-for-github-actions/security-hardening-your-deployments).
 
@@ -227,16 +252,46 @@ After this setting is applied, the JWT will contain the updated `iss` value. In 
 
 ### Including repository custom properties in OIDC tokens
 
-> [!NOTE]
-> This feature is currently in public preview and is subject to change.
-
-Organization and enterprise admins can select repository custom properties to include as claims in Actions OIDC tokens. Once a custom property is added to the OIDC configuration, every repository in the organization or enterprise that has a value set for that property will automatically include it in its OIDC tokens. The property name appears in the token prefixed with `repo_property_`.
+Organization and enterprise admins can select repository custom properties to include as claims in {% data variables.product.prodname_actions %} OIDC tokens. Once a custom property is added to the OIDC configuration, every repository in the organization or enterprise that has a value set for that property will automatically include it in its OIDC tokens. The property name appears in the token prefixed with `repo_property_`.
 
 This allows you to create attribute-based access control (ABAC) policies in your cloud provider that bind directly to your repository metadata, reducing configuration drift and eliminating the need to manage separate access configuration for each repository.
 
+#### Claim format
+
+Each enabled custom property appears as a separate claim in the OIDC token. The claim name is the property name prefixed with `repo_property_`.
+
+| Custom property name | Claim name in OIDC token |
+| --- | --- |
+| `business_unit` | `repo_property_business_unit` |
+| `workspace_id` | `repo_property_workspace_id` |
+| `data_classification` | `repo_property_data_classification` |
+
+#### Supported property types
+
+The following custom property types are supported as OIDC claims. The value representation in the token depends on the property type.
+
+| Property type | Example value in OIDC token | Notes |
+| --- | --- | --- |
+| String | `"repo_property_team": "platform-eng"` | Value appears as a plain string. |
+| Single select | `"repo_property_env_tier": "production"` | The selected option appears as a plain string. |
+| Multi select | `"repo_property_regions": "us-east-1,eu-west-1"` | Multiple selected values are joined into a single comma-separated string. |
+| True/false | `"repo_property_pci_compliant": "true"` | Boolean values appear as the string `"true"` or `"false"`. |
+
+#### Multi-select value representation
+
+When a repository has a multi-select custom property with multiple values selected, the values are joined into a single comma-separated string in the OIDC token. For example, if a repository has a `regions` property with the values `us-east-1` and `eu-west-1`, the claim appears as:
+
+```json
+{
+  "repo_property_regions": "us-east-1,eu-west-1"
+} 
+```
+
+When configuring trust policies in your cloud provider, use string matching or contains checks to evaluate multi-select claims.
+
 #### Prerequisites for including custom properties
 
-* Custom properties must already be defined at the organization or enterprise level.
+* Custom properties must already be defined at the organization or enterprise level. For more information, see [AUTOTITLE](/organizations/managing-organization-settings/managing-custom-properties-for-repositories-in-your-organization).
 * You must be an organization admin or enterprise admin.
 * After adding a custom property to the OIDC configuration, all repositories in the organization or enterprise that have a value set for that property will automatically include it in their OIDC tokens.
 
@@ -244,23 +299,27 @@ This allows you to create attribute-based access control (ABAC) policies in your
 
 You can manage which custom properties are included in OIDC tokens using the settings UI or the REST API.
 
-* **Using the settings UI:** 
+* **Using the settings UI:**
 
   Navigate to your organization's or enterprise's Actions OIDC settings to view and configure which custom properties are included in OIDC tokens.
 
-* **Using the REST API:** 
+* **Using the REST API:**
 
-  To add a custom property to your organization's OIDC token claims, send a `POST` request to:
+   To add a custom property to your organization's OIDC token claims, send a `POST` request to the appropriate OIDC custom-property inclusion endpoint. For example:
+   * For an organization: `POST /orgs/{org}/actions/oidc/customization/properties/repo`
+   * For an enterprise: `POST /enterprises/{enterprise}/actions/oidc/customization/properties/repo`
+   For request parameters and full details, see the REST API documentation for managing OIDC custom properties: [AUTOTITLE](/rest/actions/oidc).
 
-#### Example token with a custom property
+#### Example token with custom properties
 
-After a custom property is added to the OIDC configuration, repositories with a value set for that property will include it in their tokens. In the following example, the `workspace_id` custom property appears as `repo_property_workspace_id` in the token:
+After a custom property is added to the OIDC configuration, repositories with a value set for that property will include it in their tokens. In the following example, two custom properties (`business_unit` and `workspace_id`) are included in the token:
 
 ```json
 {
   "sub": "repo:my-org/my-repo:ref:refs/heads/main",
   "aud": "https://github.com/my-org",
   "repository": "my-org/my-repo",
+  "repo_property_business_unit": "payments",
   "repo_property_workspace_id": "ws-abc123"
 }
 ```
@@ -279,8 +338,9 @@ To help improve security, compliance, and standardization, you can customize the
 Customizing the claims results in a new format for the entire `sub` claim, which replaces the default predefined `sub` format in the token described in [Example subject claims](#example-subject-claims).
 
 > [!NOTE]
-> The `sub` claim uses the shortened form `repo` (for example, `repo:ORG-NAME/REPO-NAME`) instead of `repository` to reference the repository. {% ifversion fpt or ghec or ghes > 3.15 %}
-> Any `:` within the context value will be replaced with `%3A`. {% endif %}
+> The `sub` claim uses the shortened form `repo` (for example, `repo:ORG-NAME/REPO-NAME`) instead of `repository` to reference the repository. 
+> Any `:` within the context value will be replaced with `%3A`.
+> For repositories using immutable subject claims (not available on {% data variables.product.prodname_ghe_server %}), `owner_id` and `repo_id` are always included in the `repo` segment of the `sub` claim, even when you customize claims with `include_claim_keys`. You can't remove these IDs from the immutable format.
 
 The following example templates demonstrate various ways to customize the subject claim. To configure these settings on {% data variables.product.prodname_dotcom %}, admins use the REST API to specify a list of claims that must be included in the subject (`sub`) claim.
 
@@ -403,8 +463,6 @@ or:
 
 In your cloud provider's OIDC configuration, configure the `sub` condition to require a `repository_owner_id` claim that matches the required value.
 
-{% ifversion fpt or ghec or ghes > 3.15 %}
-
 #### Example: Context value with `:`
 
 This example demonstrates how to handle context value with `:`. For example, when the job references an environment named `production:eastus`.
@@ -421,7 +479,6 @@ This example demonstrates how to handle context value with `:`. For example, whe
 ```
 
 In your cloud provider's OIDC configuration, configure the `sub` condition to require that claims must include a specific value for `environment` and `repository_owner`. For example: `"sub": "environment:production%3Aeastus:repository_owner:octo-org"`.
-{% endif %}
 
 {% ifversion oidc-custom-properties %}
 

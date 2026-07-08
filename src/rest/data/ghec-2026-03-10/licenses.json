@@ -19,7 +19,7 @@
         },
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -28,7 +28,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -37,7 +37,7 @@
         }
       ],
       "bodyParameters": [],
-      "descriptionHTML": "<p>Lists the most commonly used licenses on GitHub. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository\">Licensing a repository </a>.\"</p>",
+      "descriptionHTML": "<p>Lists the most commonly used licenses on GitHub. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository\">Licensing a repository </a>.\"</p>",
       "codeExamples": [
         {
           "request": {
@@ -113,13 +113,17 @@
                     "type": "string"
                   },
                   "url": {
-                    "type": "string",
-                    "nullable": true,
+                    "type": [
+                      "string",
+                      "null"
+                    ],
                     "format": "uri"
                   },
                   "spdx_id": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "node_id": {
                     "type": "string"
@@ -180,7 +184,7 @@
         }
       ],
       "bodyParameters": [],
-      "descriptionHTML": "<p>Gets information about a specific license. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository\">Licensing a repository </a>.\"</p>",
+      "descriptionHTML": "<p>Gets information about a specific license. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository\">Licensing a repository </a>.\"</p>",
       "codeExamples": [
         {
           "request": {
@@ -231,13 +235,17 @@
                   "type": "string"
                 },
                 "spdx_id": {
-                  "type": "string",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ]
                 },
                 "url": {
-                  "type": "string",
-                  "format": "uri",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "uri"
                 },
                 "node_id": {
                   "type": "string"
@@ -356,13 +364,12 @@
           "in": "query",
           "required": false,
           "schema": {
-            "type": "string",
-            "description": "The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,\n`refs/heads/<branch name>` or simply `<branch name>`."
+            "type": "string"
           }
         }
       ],
       "bodyParameters": [],
-      "descriptionHTML": "<p>This method returns the contents of the repository's license file, if one is detected.</p>\n<p>This endpoint supports the following custom media types. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/getting-started-with-the-rest-api#media-types\">Media types</a>.\"</p>\n<ul>\n<li><strong><code>application/vnd.github.raw+json</code></strong>: Returns the raw contents of the license.</li>\n<li><strong><code>application/vnd.github.html+json</code></strong>: Returns the license contents in HTML. Markup languages are rendered to HTML using GitHub's open-source <a href=\"https://github.com/github/markup\">Markup library</a>.</li>\n</ul>",
+      "descriptionHTML": "<p>This method returns the contents of the repository's license file, if one is detected.</p>\n<p>This endpoint supports the following custom media types. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types\">Media types</a>.\"</p>\n<ul>\n<li><strong><code>application/vnd.github.raw+json</code></strong>: Returns the raw contents of the license.</li>\n<li><strong><code>application/vnd.github.html+json</code></strong>: Returns the license contents in HTML. Markup languages are rendered to HTML using GitHub's open-source <a href=\"https://github.com/github/markup\">Markup library</a>.</li>\n</ul>",
       "codeExamples": [
         {
           "request": {
@@ -424,19 +431,25 @@
                   "format": "uri"
                 },
                 "html_url": {
-                  "type": "string",
-                  "format": "uri",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "uri"
                 },
                 "git_url": {
-                  "type": "string",
-                  "format": "uri",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "uri"
                 },
                 "download_url": {
-                  "type": "string",
-                  "format": "uri",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "uri"
                 },
                 "type": {
                   "type": "string"
@@ -451,14 +464,18 @@
                   "type": "object",
                   "properties": {
                     "git": {
-                      "type": "string",
-                      "format": "uri",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "uri"
                     },
                     "html": {
-                      "type": "string",
-                      "format": "uri",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "uri"
                     },
                     "self": {
                       "type": "string",
@@ -472,41 +489,51 @@
                   ]
                 },
                 "license": {
-                  "title": "License Simple",
-                  "description": "License Simple",
-                  "type": "object",
-                  "properties": {
-                    "key": {
-                      "type": "string"
+                  "anyOf": [
+                    {
+                      "type": "null"
                     },
-                    "name": {
-                      "type": "string"
-                    },
-                    "url": {
-                      "type": "string",
-                      "nullable": true,
-                      "format": "uri"
-                    },
-                    "spdx_id": {
-                      "type": "string",
-                      "nullable": true
-                    },
-                    "node_id": {
-                      "type": "string"
-                    },
-                    "html_url": {
-                      "type": "string",
-                      "format": "uri"
+                    {
+                      "title": "License Simple",
+                      "description": "License Simple",
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "format": "uri"
+                        },
+                        "spdx_id": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "node_id": {
+                          "type": "string"
+                        },
+                        "html_url": {
+                          "type": "string",
+                          "format": "uri"
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "name",
+                        "url",
+                        "spdx_id",
+                        "node_id"
+                      ]
                     }
-                  },
-                  "required": [
-                    "key",
-                    "name",
-                    "url",
-                    "spdx_id",
-                    "node_id"
-                  ],
-                  "nullable": true
+                  ]
                 }
               },
               "required": [

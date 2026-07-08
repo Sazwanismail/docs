@@ -1,6 +1,6 @@
 ---
 title: Best practices for securing code in your supply chain
-shortTitle: Securing code
+shortTitle: Secure code
 allowTitleToDifferFromFilename: true
 intro: Guidance on how to protect the center of your supply chain—the code you write and the code you depend on.
 versions:
@@ -10,6 +10,8 @@ versions:
 redirect_from:
   - /code-security/supply-chain-security/end-to-end-supply-chain/securing-code
 contentType: tutorials
+category:
+  - Secure your dependencies
 ---
 
 ## About this guide

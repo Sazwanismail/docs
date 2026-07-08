@@ -1,6 +1,6 @@
 ---
 title: Best practices for securing your build system
-shortTitle: Securing builds
+shortTitle: Secure builds
 allowTitleToDifferFromFilename: true
 intro: Guidance on how to protect the end of your supply chain—the systems you use to build and distribute artifacts.
 versions:
@@ -10,6 +10,8 @@ versions:
 redirect_from:
   - /code-security/supply-chain-security/end-to-end-supply-chain/securing-builds
 contentType: tutorials
+category:
+  - Secure your dependencies
 ---
 
 ## About this guide

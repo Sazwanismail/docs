@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, test } from 'vitest'
 
 import { get } from '@/tests/helpers/e2etest'
-import { SURROGATE_ENUMS } from '@/frame/middleware/set-fastly-surrogate-key'
+import { makeLanguageSurrogateKey } from '@/frame/middleware/set-fastly-surrogate-key'
 import { latest } from '@/versions/lib/enterprise-server-releases'
 
 const makeURL = (pathname: string): string =>
@@ -12,6 +12,7 @@ interface PageMetadata {
   title: string
   intro: string
   documentType: string | null
+  redirectedFrom?: string
 }
 
 interface ErrorResponse {
@@ -46,13 +47,15 @@ describe('pageinfo api', () => {
       'Get started using HubGit to manage Git repositories and collaborate with others.',
     )
     expect(meta.documentType).toBe('category')
+    // Canonical URLs should not have redirectedFrom
+    expect(meta.redirectedFrom).toBeUndefined()
     // Check that it can be cached at the CDN
     expect(res.headers['set-cookie']).toBeUndefined()
     expect(res.headers['cache-control']).toContain('public')
     expect(res.headers['cache-control']).toMatch(/max-age=[1-9]/)
     expect(res.headers['surrogate-control']).toContain('public')
     expect(res.headers['surrogate-control']).toMatch(/max-age=[1-9]/)
-    expect(res.headers['surrogate-key']).toBe(`${SURROGATE_ENUMS.DEFAULT} language:en`)
+    expect(res.headers['surrogate-key']).toBe(makeLanguageSurrogateKey('en'))
   })
 
   test('a pathname that does not exist', async () => {
@@ -90,6 +93,7 @@ describe('pageinfo api', () => {
       expect(res.statusCode).toBe(200)
       const meta = JSON.parse(res.body) as PageMetadata
       expect(meta.title).toBe('HubGit.com Fixture Documentation')
+      expect(meta.redirectedFrom).toBe('/en/olden-days')
     }
     // Trailing slashes are always removed
     {
@@ -97,6 +101,7 @@ describe('pageinfo api', () => {
       expect(res.statusCode).toBe(200)
       const meta = JSON.parse(res.body) as PageMetadata
       expect(meta.title).toBe('HubGit.com Fixture Documentation')
+      expect(meta.redirectedFrom).toBe('/en/olden-days')
     }
     // Short code for latest version
     {

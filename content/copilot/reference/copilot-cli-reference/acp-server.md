@@ -10,6 +10,8 @@ category:
 contentType: reference
 redirect_from:
   - /copilot/reference/acp-server
+docsTeamMetrics:
+  - copilot-cli
 ---
 
 > [!NOTE]
@@ -17,7 +19,7 @@ redirect_from:
 
 ## Overview
 
-The Agent Client Protocol (ACP) is a protocol that standardizes communication between clients (such as code editors and IDEs) and coding agents (such as {% data variables.copilot.copilot_cli_short %}). For more details about this protocol, see the [official introduction](https://agentclientprotocol.com/get-started/introduction).
+The Agent Client Protocol (ACP) is a protocol that standardizes communication between clients (such as code editors and IDEs) and agents (such as {% data variables.copilot.copilot_cli_short %}). For more details about this protocol, see the [official introduction](https://agentclientprotocol.com/get-started/introduction).
 
 ## Use cases
 
@@ -29,6 +31,9 @@ The Agent Client Protocol (ACP) is a protocol that standardizes communication be
 ## Starting the ACP server
 
 {% data variables.copilot.copilot_cli %} can be started as an ACP server using the `--acp` flag. The server supports two modes, `stdio` and `TCP`.
+
+> [!NOTE]
+> When running in ACP mode, the tool-filtering flags (`--available-tools`, `--excluded-tools`) and the reasoning flag (`--effort`, `--reasoning-effort`) are applied to each session started by the ACP client.
 
 ### stdio mode (recommended for IDE integration)
 
@@ -131,4 +136,5 @@ main().catch((error) => {
 
 ## Further reading
 
+* [AUTOTITLE](/copilot/concepts/agents/copilot-in-jetbrains)
 * [Official ACP documentation](https://agentclientprotocol.com/protocol/overview)

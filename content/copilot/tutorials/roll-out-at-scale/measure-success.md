@@ -11,6 +11,7 @@ category:
   - Measure success
   - Track Copilot usage
   - Manage Copilot for a team
+  - Roll Copilot out at scale
 contentType: tutorials
 ---
 
@@ -99,7 +100,7 @@ Example response:
 ```json
 {
   "download_links": [
-    "https://example.com/copilot-usage-report.json"
+    "https://example.com/copilot-usage-report.ndjson"
   ],
   "report_start_day": "2025-07-18",
   "report_end_day": "2025-08-14"

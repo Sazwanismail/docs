@@ -14,15 +14,11 @@ category:
   - Manage branches and protect code
 ---
 
-You can create branch or tag rulesets to control how users can interact with selected branches and tags in a repository. {% ifversion push-rulesets %}You can also create push rulesets to block pushes to a private or internal repository and that repository's entire fork network.{% endif %}
+You can create branch or tag rulesets to control how users can interact with selected branches and tags in a repository. You can also create push rulesets to block pushes to a private or internal repository and that repository's entire fork network.
 
 When you create a ruleset, you can allow certain users to bypass the rules in the ruleset. This can be users with certain roles, specific teams, or {% data variables.product.prodname_github_apps %}.
 
-{% ifversion push-rulesets %}
-
 For push rulesets, bypass permissions apply to a repository and the repository's entire fork network. {% data reusables.repositories.rulesets-push-rulesets-bypass-permissions %}
-
-{% endif %}
 
 For more information on creating rulesets and bypass permissions, see {% ifversion ghec %}[AUTOTITLE](/enterprise-cloud@latest/organizations/managing-organization-settings/creating-rulesets-for-repositories-in-your-organization) and {% endif %}[AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/creating-rulesets-for-a-repository).
 
@@ -124,6 +120,8 @@ Optionally, you can choose to dismiss stale pull request approvals when commits 
 
 Optionally, you can choose to require reviews from code owners. If you do, any pull request that modifies content with a code owner must be approved by that code owner before the pull request can be merged into the protected branch. Note that if code has multiple owners, an approval from _any_ of the code owners will be sufficient to meet this requirement. For more information, see [AUTOTITLE](/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
 
+Optionally, you can restrict who can dismiss pull request reviews. If you enable this setting, select the users, teams, or {% data variables.product.prodname_github_apps %} that can dismiss reviews on branches targeted by the ruleset. You can configure this setting in the UI or through the REST API or GraphQL API. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/dismissing-a-pull-request-review).
+
 Optionally, you can require an approval from someone other than the last person to push to a branch before a pull request can be merged. This means at least one other authorized reviewer has approved any changes. For example, the "last reviewer" can check that the latest set of changes incorporates feedback from other reviews, and does not add new, unreviewed content.
 
 For complex pull requests that require many reviews, requiring an approval from someone other than the last person to push can be a compromise that avoids the need to dismiss all stale reviews: with this option, "stale" reviews are not dismissed, and the pull request remains approved as long as someone other than the person who made the most recent changes approves it. Users who have already reviewed a pull request can reapprove after the most recent push to meet this requirement. If you are concerned about pull requests being "hijacked" (where unapproved content is added to approved pull requests), it is safer to dismiss stale reviews.
@@ -138,9 +136,9 @@ Optionally, you can require a merge type of merge, squash, or rebase. This means
 
 #### Required reviewers
 
-Optionally, you can require review or approval from specific teams when a pull request changes certain files or directories. You can specify up to 15 different teams, and for each team you can require a certain number of approvals from team members.
+Optionally, you can require review or approval from specific teams when a pull request changes certain files or directories. You can specify up to 15 different teams, and for each team you can require a certain number of approvals from team members. For an approval from a team member to count, the team must have write permissions (or higher) for the repository.
 
-The **Reviewer** dropdown allows you to select any team which is in scope where the rule is being defined. 
+The **Reviewer** dropdown allows you to select any team which is in scope where the rule is being defined.
 
 * **Organization-wide rules**: The team must belong to the organization.
 * **Repository-level rules**: The team must belong to the organization that owns the repository.
@@ -216,6 +214,20 @@ If your repositories are configured with {% data variables.product.prodname_code
 
 For more information, see [AUTOTITLE](/code-security/code-quality/concepts/about-code-quality) and [AUTOTITLE](/code-security/code-quality/how-tos/set-pr-thresholds).
 
+## Restrict code coverage
+
+> [!NOTE]
+> This feature is in {% data variables.release-phases.public_preview %} and subject to change.
+
+If your repository has {% data variables.product.prodname_code_quality %} enabled and code coverage data is being uploaded, you can use rulesets to prevent pull requests from being merged based on code coverage thresholds. For more information about uploading coverage data, see [AUTOTITLE](/code-security/how-tos/maintain-quality-code/set-up-code-coverage).
+
+This rule blocks a pull request from being merged when either of two code coverage thresholds is not met:
+
+* **Minimum coverage percentage**: the aggregated code coverage for the pull request branch is below the configured percentage.
+* **Maximum coverage drop**: code coverage drops by more than the configured number of percentage points relative to the default branch.
+
+For how to configure the thresholds, the prerequisite for uploading coverage data, and how to roll the rule out safely, see [AUTOTITLE](/code-security/how-tos/maintain-quality-code/restrict-code-coverage).
+
 {% endif %}
 
 {% ifversion repo-rules-required-workflows %}
@@ -274,13 +286,13 @@ Metadata restrictions block "ref updates." If a contributor pushes work that inc
 
 Metadata restrictions can increase friction for people contributing to a repository. Generally, if you impose metadata restrictions, you should do so on a limited set of branches to avoid impacting contributors' daily work. For example, instead of requiring consistent commit messages on any topic branch that a contributor might work on, you should require consistent commit messages on `main` only, then require pull requests into `main`.
 
-If you use squash merges, the individual commits in the pull request are ignored. Instead, restrictions are only validated against the metadata of the single, resulting merge commit. The pull request page validates this information before the merge is allowed, ensuring the final commit is compliant. For metadata restrictions that apply to committer emails, the pattern must also include `noreply@github.com` for squash merges to satisfy the restriction.
+If you use squash merges, the individual commits in the pull request are ignored. Instead, restrictions are only validated against the metadata of the single, resulting merge commit. The pull request page validates this information before the merge is allowed, ensuring the final commit is compliant.
+
+For metadata restrictions that apply to committer emails, to satisfy the restriction, the pattern must also include `noreply@github.com` for web-based merges and other commits created on {% data variables.product.prodname_dotcom_the_website %}.
 
 When you add metadata restrictions to an existing branch or tag, the rules are enforced for new commits pushed to the branch or tag from that point forward, but they are not enforced against the existing history of the branch or tag.
 
 {% endif %}
-
-{% ifversion push-rulesets %}
 
 ## Restrict file paths
 
@@ -299,5 +311,3 @@ Prevent commits that include files with specified file extensions from being pus
 ## Restrict file size
 
 Prevent commits that exceed a specified file size limit from being pushed to the repository.
-
-{% endif %}

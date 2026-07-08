@@ -11,6 +11,8 @@ category:
   - Build with Copilot CLI
   - Quickstarts
   - Author and optimize with Copilot
+docsTeamMetrics:
+  - copilot-cli
 ---
 
 ## Introduction
@@ -40,7 +42,7 @@ Use one of these commands:
 * **macOS/Linux (Homebrew)**
 
   ```bash copy
-  brew install copilot-cli
+  brew install --cask copilot-cli
   ```
 
 ## Starting the CLI for the first time
@@ -66,6 +68,8 @@ Use one of these commands:
    ```copilot copy
    Give me an overview of this project.
    ```
+
+   If you like, you can speak your prompt instead of typing it. See [AUTOTITLE](/copilot/how-tos/copilot-cli/use-copilot-cli/voice-input).
 
 ## Core shortcuts to master
 

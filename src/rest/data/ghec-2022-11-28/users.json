@@ -91,8 +91,10 @@
                       "format": "uri"
                     },
                     "gravatar_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "url": {
                       "type": "string",
@@ -141,42 +143,60 @@
                       "type": "boolean"
                     },
                     "name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "company": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "blog": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "location": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "notification_email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "hireable": {
-                      "type": "boolean",
-                      "nullable": true
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "bio": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "twitter_username": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "public_repos": {
                       "type": "integer"
@@ -309,8 +329,10 @@
                       "format": "uri"
                     },
                     "gravatar_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "url": {
                       "type": "string",
@@ -359,42 +381,60 @@
                       "type": "boolean"
                     },
                     "name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "company": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "blog": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "location": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "notification_email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "hireable": {
-                      "type": "boolean",
-                      "nullable": true
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "bio": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "twitter_username": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "public_repos": {
                       "type": "integer"
@@ -562,8 +602,10 @@
                       "format": "uri"
                     },
                     "gravatar_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "url": {
                       "type": "string",
@@ -612,42 +654,60 @@
                       "type": "boolean"
                     },
                     "name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "company": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "blog": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "location": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "notification_email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "hireable": {
-                      "type": "boolean",
-                      "nullable": true
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "bio": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "twitter_username": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "public_repos": {
                       "type": "integer"
@@ -780,8 +840,10 @@
                       "format": "uri"
                     },
                     "gravatar_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "url": {
                       "type": "string",
@@ -830,42 +892,60 @@
                       "type": "boolean"
                     },
                     "name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "company": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "blog": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "location": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "notification_email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "hireable": {
-                      "type": "boolean",
-                      "nullable": true
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "bio": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "twitter_username": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "public_repos": {
                       "type": "integer"
@@ -1128,8 +1208,10 @@
                   "format": "uri"
                 },
                 "gravatar_id": {
-                  "type": "string",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ]
                 },
                 "url": {
                   "type": "string",
@@ -1178,42 +1260,60 @@
                   "type": "boolean"
                 },
                 "name": {
-                  "type": "string",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ]
                 },
                 "company": {
-                  "type": "string",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ]
                 },
                 "blog": {
-                  "type": "string",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ]
                 },
                 "location": {
-                  "type": "string",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ]
                 },
                 "email": {
-                  "type": "string",
-                  "format": "email",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "email"
                 },
                 "notification_email": {
-                  "type": "string",
-                  "format": "email",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "email"
                 },
                 "hireable": {
-                  "type": "boolean",
-                  "nullable": true
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
                 },
                 "bio": {
-                  "type": "string",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ]
                 },
                 "twitter_username": {
-                  "type": "string",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ]
                 },
                 "public_repos": {
                   "type": "integer"
@@ -1383,7 +1483,7 @@
         }
       ],
       "bodyParameters": [],
-      "descriptionHTML": "<p>Provides publicly available information about someone with a GitHub account. This method takes their durable user <code>ID</code> instead of their <code>login</code>, which can change over time.</p>\n<p>If you are requesting information about an <a href=\"https://docs.github.com/enterprise-cloud@latest//enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/about-enterprise-managed-users\">Enterprise Managed User</a>, or a GitHub App bot that is installed in an organization that uses Enterprise Managed Users, your requests must be authenticated as a user or GitHub App that has access to the organization to view that account's information. If you are not authorized, the request will return a <code>404 Not Found</code> status.</p>\n<p>The <code>email</code> key in the following response is the publicly visible email address from your GitHub Enterprise Cloud <a href=\"https://github.com/settings/profile\">profile page</a>. When setting up your profile, you can select a primary email address to be public which provides an email entry for this endpoint. If you do not set a public email address for <code>email</code>, then it will have a value of <code>null</code>. You only see publicly visible email addresses when authenticated with GitHub Enterprise Cloud. For more information, see <a href=\"https://docs.github.com/enterprise-cloud@latest//rest/guides/getting-started-with-the-rest-api#authentication\">Authentication</a>.</p>\n<p>The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see <a href=\"https://docs.github.com/enterprise-cloud@latest//rest/users/emails\">Emails API</a>.</p>",
+      "descriptionHTML": "<p>Provides publicly available information about someone with a GitHub account. This method takes their durable user <code>ID</code> instead of their <code>login</code>, which can change over time.</p>\n<p>If you are requesting information about an <a href=\"https://docs.github.com/enterprise-cloud@latest/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/about-enterprise-managed-users\">Enterprise Managed User</a>, or a GitHub App bot that is installed in an organization that uses Enterprise Managed Users, your requests must be authenticated as a user or GitHub App that has access to the organization to view that account's information. If you are not authorized, the request will return a <code>404 Not Found</code> status.</p>\n<p>The <code>email</code> key in the following response is the publicly visible email address from your GitHub Enterprise Cloud <a href=\"https://github.com/settings/profile\">profile page</a>. When setting up your profile, you can select a primary email address to be public which provides an email entry for this endpoint. If you do not set a public email address for <code>email</code>, then it will have a value of <code>null</code>. You only see publicly visible email addresses when authenticated with GitHub Enterprise Cloud. For more information, see <a href=\"https://docs.github.com/enterprise-cloud@latest/rest/guides/getting-started-with-the-rest-api#authentication\">Authentication</a>.</p>\n<p>The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see <a href=\"https://docs.github.com/enterprise-cloud@latest/rest/users/emails\">Emails API</a>.</p>",
       "codeExamples": [
         {
           "request": {
@@ -1456,8 +1556,10 @@
                       "format": "uri"
                     },
                     "gravatar_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "url": {
                       "type": "string",
@@ -1506,42 +1608,60 @@
                       "type": "boolean"
                     },
                     "name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "company": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "blog": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "location": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "notification_email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "hireable": {
-                      "type": "boolean",
-                      "nullable": true
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "bio": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "twitter_username": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "public_repos": {
                       "type": "integer"
@@ -1674,8 +1794,10 @@
                       "format": "uri"
                     },
                     "gravatar_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "url": {
                       "type": "string",
@@ -1724,42 +1846,60 @@
                       "type": "boolean"
                     },
                     "name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "company": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "blog": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "location": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "notification_email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "hireable": {
-                      "type": "boolean",
-                      "nullable": true
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "bio": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "twitter_username": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "public_repos": {
                       "type": "integer"
@@ -1936,8 +2076,10 @@
                       "format": "uri"
                     },
                     "gravatar_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "url": {
                       "type": "string",
@@ -1986,42 +2128,60 @@
                       "type": "boolean"
                     },
                     "name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "company": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "blog": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "location": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "notification_email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "hireable": {
-                      "type": "boolean",
-                      "nullable": true
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "bio": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "twitter_username": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "public_repos": {
                       "type": "integer"
@@ -2154,8 +2314,10 @@
                       "format": "uri"
                     },
                     "gravatar_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "url": {
                       "type": "string",
@@ -2204,42 +2366,60 @@
                       "type": "boolean"
                     },
                     "name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "company": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "blog": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "location": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "notification_email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "hireable": {
-                      "type": "boolean",
-                      "nullable": true
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "bio": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "twitter_username": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "public_repos": {
                       "type": "integer"
@@ -2379,7 +2559,7 @@
         },
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -2388,7 +2568,7 @@
         }
       ],
       "bodyParameters": [],
-      "descriptionHTML": "<p>Lists all users, in the order that they signed up on GitHub Enterprise Cloud. This list includes personal user accounts and organization accounts.</p>\n<p>Note: Pagination is powered exclusively by the <code>since</code> parameter. Use the <a href=\"https://docs.github.com/enterprise-cloud@latest//rest/guides/using-pagination-in-the-rest-api#using-link-headers\">Link header</a> to get the URL for the next page of users.</p>",
+      "descriptionHTML": "<p>Lists all users, in the order that they signed up on GitHub Enterprise Cloud. This list includes personal user accounts and organization accounts.</p>\n<p>Note: Pagination is powered exclusively by the <code>since</code> parameter. Use the <a href=\"https://docs.github.com/enterprise-cloud@latest/rest/guides/using-pagination-in-the-rest-api#using-link-headers\">Link header</a> to get the URL for the next page of users.</p>",
       "codeExamples": [
         {
           "request": {
@@ -2429,12 +2609,16 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "nullable": true,
-                    "type": "string"
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "email": {
-                    "nullable": true,
-                    "type": "string"
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "login": {
                     "type": "string"
@@ -2451,8 +2635,10 @@
                     "format": "uri"
                   },
                   "gravatar_id": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "url": {
                     "type": "string",
@@ -2571,7 +2757,7 @@
         }
       ],
       "bodyParameters": [],
-      "descriptionHTML": "<p>Provides publicly available information about someone with a GitHub account.</p>\n<p>If you are requesting information about an <a href=\"https://docs.github.com/enterprise-cloud@latest//enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/about-enterprise-managed-users\">Enterprise Managed User</a>, or a GitHub App bot that is installed in an organization that uses Enterprise Managed Users, your requests must be authenticated as a user or GitHub App that has access to the organization to view that account's information. If you are not authorized, the request will return a <code>404 Not Found</code> status.</p>\n<p>The <code>email</code> key in the following response is the publicly visible email address from your GitHub Enterprise Cloud <a href=\"https://github.com/settings/profile\">profile page</a>. When setting up your profile, you can select a primary email address to be public which provides an email entry for this endpoint. If you do not set a public email address for <code>email</code>, then it will have a value of <code>null</code>. You only see publicly visible email addresses when authenticated with GitHub Enterprise Cloud. For more information, see <a href=\"https://docs.github.com/enterprise-cloud@latest//rest/guides/getting-started-with-the-rest-api#authentication\">Authentication</a>.</p>\n<p>The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see <a href=\"https://docs.github.com/enterprise-cloud@latest//rest/users/emails\">Emails API</a>.</p>",
+      "descriptionHTML": "<p>Provides publicly available information about someone with a GitHub account.</p>\n<p>If you are requesting information about an <a href=\"https://docs.github.com/enterprise-cloud@latest/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/about-enterprise-managed-users\">Enterprise Managed User</a>, or a GitHub App bot that is installed in an organization that uses Enterprise Managed Users, your requests must be authenticated as a user or GitHub App that has access to the organization to view that account's information. If you are not authorized, the request will return a <code>404 Not Found</code> status.</p>\n<p>The <code>email</code> key in the following response is the publicly visible email address from your GitHub Enterprise Cloud <a href=\"https://github.com/settings/profile\">profile page</a>. When setting up your profile, you can select a primary email address to be public which provides an email entry for this endpoint. If you do not set a public email address for <code>email</code>, then it will have a value of <code>null</code>. You only see publicly visible email addresses when authenticated with GitHub Enterprise Cloud. For more information, see <a href=\"https://docs.github.com/enterprise-cloud@latest/rest/guides/getting-started-with-the-rest-api#authentication\">Authentication</a>.</p>\n<p>The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see <a href=\"https://docs.github.com/enterprise-cloud@latest/rest/users/emails\">Emails API</a>.</p>",
       "codeExamples": [
         {
           "request": {
@@ -2644,8 +2830,10 @@
                       "format": "uri"
                     },
                     "gravatar_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "url": {
                       "type": "string",
@@ -2694,42 +2882,60 @@
                       "type": "boolean"
                     },
                     "name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "company": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "blog": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "location": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "notification_email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "hireable": {
-                      "type": "boolean",
-                      "nullable": true
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "bio": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "twitter_username": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "public_repos": {
                       "type": "integer"
@@ -2862,8 +3068,10 @@
                       "format": "uri"
                     },
                     "gravatar_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "url": {
                       "type": "string",
@@ -2912,42 +3120,60 @@
                       "type": "boolean"
                     },
                     "name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "company": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "blog": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "location": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "notification_email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "hireable": {
-                      "type": "boolean",
-                      "nullable": true
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "bio": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "twitter_username": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "public_repos": {
                       "type": "integer"
@@ -3124,8 +3350,10 @@
                       "format": "uri"
                     },
                     "gravatar_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "url": {
                       "type": "string",
@@ -3174,42 +3402,60 @@
                       "type": "boolean"
                     },
                     "name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "company": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "blog": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "location": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "notification_email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "hireable": {
-                      "type": "boolean",
-                      "nullable": true
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "bio": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "twitter_username": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "public_repos": {
                       "type": "integer"
@@ -3342,8 +3588,10 @@
                       "format": "uri"
                     },
                     "gravatar_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "url": {
                       "type": "string",
@@ -3392,42 +3640,60 @@
                       "type": "boolean"
                     },
                     "name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "company": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "blog": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "location": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "notification_email": {
-                      "type": "string",
-                      "format": "email",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "email"
                     },
                     "hireable": {
-                      "type": "boolean",
-                      "nullable": true
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "bio": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "twitter_username": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "public_repos": {
                       "type": "integer"
@@ -3678,7 +3944,7 @@
       "parameters": [
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -3687,7 +3953,7 @@
         },
         {
           "name": "before",
-          "description": "<p>A cursor, as given in the <a href=\"https://docs.github.com/enterprise-cloud@latest//rest/guides/using-pagination-in-the-rest-api#using-link-headers\">Link header</a>. If specified, the query only searches for results before this cursor. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>A cursor, as given in the <a href=\"https://docs.github.com/enterprise-cloud@latest/rest/guides/using-pagination-in-the-rest-api#using-link-headers\">Link header</a>. If specified, the query only searches for results before this cursor. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "required": false,
           "schema": {
@@ -3696,7 +3962,7 @@
         },
         {
           "name": "after",
-          "description": "<p>A cursor, as given in the <a href=\"https://docs.github.com/enterprise-cloud@latest//rest/guides/using-pagination-in-the-rest-api#using-link-headers\">Link header</a>. If specified, the query only searches for results after this cursor. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>A cursor, as given in the <a href=\"https://docs.github.com/enterprise-cloud@latest/rest/guides/using-pagination-in-the-rest-api#using-link-headers\">Link header</a>. If specified, the query only searches for results after this cursor. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "required": false,
           "schema": {
@@ -3726,7 +3992,7 @@
           "description": "<p>Optional filter for fetching attestations with a given predicate type.\nThis option accepts <code>provenance</code>, <code>sbom</code>, <code>release</code>, or freeform text\nfor custom predicate types.</p>"
         }
       ],
-      "descriptionHTML": "<p>List a collection of artifact attestations associated with any entry in a list of subject digests owned by a user.</p>\n<p>The collection of attestations returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the <code>attestations:read</code> permission is required.</p>\n<p><strong>Please note:</strong> in order to offer meaningful security benefits, an attestation's signature and timestamps <strong>must</strong> be cryptographically verified, and the identity of the attestation signer <strong>must</strong> be validated. Attestations can be verified using the <a href=\"https://cli.github.com/manual/gh_attestation_verify\">GitHub CLI <code>attestation verify</code> command</a>. For more information, see <a href=\"https://docs.github.com/enterprise-cloud@latest//actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds\">our guide on how to use artifact attestations to establish a build's provenance</a>.</p>",
+      "descriptionHTML": "<p>List a collection of artifact attestations associated with any entry in a list of subject digests owned by a user.</p>\n<p>The collection of attestations returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the <code>attestations:read</code> permission is required.</p>\n<p><strong>Please note:</strong> in order to offer meaningful security benefits, an attestation's signature and timestamps <strong>must</strong> be cryptographically verified, and the identity of the attestation signer <strong>must</strong> be validated. Attestations can be verified using the <a href=\"https://cli.github.com/manual/gh_attestation_verify\">GitHub CLI <code>attestation verify</code> command</a>. For more information, see <a href=\"https://docs.github.com/enterprise-cloud@latest/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds\">our guide on how to use artifact attestations to establish a build's provenance</a>.</p>",
       "codeExamples": [
         {
           "request": {
@@ -3883,8 +4149,10 @@
                 "attestations_subject_digests": {
                   "type": "object",
                   "additionalProperties": {
-                    "nullable": true,
-                    "type": "array",
+                    "type": [
+                      "array",
+                      "null"
+                    ],
                     "items": {
                       "type": "object",
                       "properties": {
@@ -4195,7 +4463,7 @@
       "parameters": [
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -4204,7 +4472,7 @@
         },
         {
           "name": "before",
-          "description": "<p>A cursor, as given in the <a href=\"https://docs.github.com/enterprise-cloud@latest//rest/guides/using-pagination-in-the-rest-api#using-link-headers\">Link header</a>. If specified, the query only searches for results before this cursor. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>A cursor, as given in the <a href=\"https://docs.github.com/enterprise-cloud@latest/rest/guides/using-pagination-in-the-rest-api#using-link-headers\">Link header</a>. If specified, the query only searches for results before this cursor. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "required": false,
           "schema": {
@@ -4213,7 +4481,7 @@
         },
         {
           "name": "after",
-          "description": "<p>A cursor, as given in the <a href=\"https://docs.github.com/enterprise-cloud@latest//rest/guides/using-pagination-in-the-rest-api#using-link-headers\">Link header</a>. If specified, the query only searches for results after this cursor. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>A cursor, as given in the <a href=\"https://docs.github.com/enterprise-cloud@latest/rest/guides/using-pagination-in-the-rest-api#using-link-headers\">Link header</a>. If specified, the query only searches for results after this cursor. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "required": false,
           "schema": {
@@ -4249,7 +4517,7 @@
         }
       ],
       "bodyParameters": [],
-      "descriptionHTML": "<p>List a collection of artifact attestations with a given subject digest that are associated with repositories owned by a user.</p>\n<p>The collection of attestations returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the <code>attestations:read</code> permission is required.</p>\n<p><strong>Please note:</strong> in order to offer meaningful security benefits, an attestation's signature and timestamps <strong>must</strong> be cryptographically verified, and the identity of the attestation signer <strong>must</strong> be validated. Attestations can be verified using the <a href=\"https://cli.github.com/manual/gh_attestation_verify\">GitHub CLI <code>attestation verify</code> command</a>. For more information, see <a href=\"https://docs.github.com/enterprise-cloud@latest//actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds\">our guide on how to use artifact attestations to establish a build's provenance</a>.</p>",
+      "descriptionHTML": "<p>List a collection of artifact attestations with a given subject digest that are associated with repositories owned by a user.</p>\n<p>The collection of attestations returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the <code>attestations:read</code> permission is required.</p>\n<p><strong>Please note:</strong> in order to offer meaningful security benefits, an attestation's signature and timestamps <strong>must</strong> be cryptographically verified, and the identity of the attestation signer <strong>must</strong> be validated. Attestations can be verified using the <a href=\"https://cli.github.com/manual/gh_attestation_verify\">GitHub CLI <code>attestation verify</code> command</a>. For more information, see <a href=\"https://docs.github.com/enterprise-cloud@latest/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds\">our guide on how to use artifact attestations to establish a build's provenance</a>.</p>",
       "codeExamples": [
         {
           "request": {
@@ -4474,7 +4742,7 @@
       "parameters": [
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -4483,7 +4751,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -4533,12 +4801,16 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "nullable": true,
-                    "type": "string"
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "email": {
-                    "nullable": true,
-                    "type": "string"
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "login": {
                     "type": "string"
@@ -4555,8 +4827,10 @@
                     "format": "uri"
                   },
                   "gravatar_id": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "url": {
                     "type": "string",
@@ -4944,8 +5218,10 @@
                     "type": "boolean"
                   },
                   "visibility": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   }
                 },
                 "required": [
@@ -5007,7 +5283,7 @@
       "parameters": [
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -5016,7 +5292,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -5062,8 +5338,10 @@
                     "type": "boolean"
                   },
                   "visibility": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   }
                 },
                 "required": [
@@ -5184,8 +5462,10 @@
                     "type": "boolean"
                   },
                   "visibility": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   }
                 },
                 "required": [
@@ -5321,7 +5601,7 @@
       "parameters": [
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -5330,7 +5610,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -5339,7 +5619,7 @@
         }
       ],
       "bodyParameters": [],
-      "descriptionHTML": "<p>Lists your publicly visible email address, which you can set with the\n<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/users/emails#set-primary-email-visibility-for-the-authenticated-user\">Set primary email visibility for the authenticated user</a>\nendpoint.</p>\n<p>OAuth app tokens and personal access tokens (classic) need the <code>user:email</code> scope to use this endpoint.</p>",
+      "descriptionHTML": "<p>Lists your publicly visible email address, which you can set with the\n<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/users/emails#set-primary-email-visibility-for-the-authenticated-user\">Set primary email visibility for the authenticated user</a>\nendpoint.</p>\n<p>OAuth app tokens and personal access tokens (classic) need the <code>user:email</code> scope to use this endpoint.</p>",
       "codeExamples": [
         {
           "request": {
@@ -5376,8 +5656,10 @@
                     "type": "boolean"
                   },
                   "visibility": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   }
                 },
                 "required": [
@@ -5438,7 +5720,7 @@
       "parameters": [
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -5447,7 +5729,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -5497,12 +5779,16 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "nullable": true,
-                    "type": "string"
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "email": {
-                    "nullable": true,
-                    "type": "string"
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "login": {
                     "type": "string"
@@ -5519,8 +5805,10 @@
                     "format": "uri"
                   },
                   "gravatar_id": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "url": {
                     "type": "string",
@@ -5640,7 +5928,7 @@
       "parameters": [
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -5649,7 +5937,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -5699,12 +5987,16 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "nullable": true,
-                    "type": "string"
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "email": {
-                    "nullable": true,
-                    "type": "string"
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "login": {
                     "type": "string"
@@ -5721,8 +6013,10 @@
                     "format": "uri"
                   },
                   "gravatar_id": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "url": {
                     "type": "string",
@@ -5920,7 +6214,7 @@
         }
       ],
       "bodyParameters": [],
-      "descriptionHTML": "<p>Note that you'll need to set <code>Content-Length</code> to zero when calling out to this endpoint. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/guides/getting-started-with-the-rest-api#http-method\">HTTP verbs</a>.\"</p>\n<p>OAuth app tokens and personal access tokens (classic) need the <code>user:follow</code> scope to use this endpoint.</p>",
+      "descriptionHTML": "<p>Note that you'll need to set <code>Content-Length</code> to zero when calling out to this endpoint. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/guides/getting-started-with-the-rest-api#http-method\">HTTP verbs</a>.\"</p>\n<p>OAuth app tokens and personal access tokens (classic) need the <code>user:follow</code> scope to use this endpoint.</p>",
       "codeExamples": [
         {
           "request": {
@@ -6062,7 +6356,7 @@
         },
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -6071,7 +6365,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -6124,12 +6418,16 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "nullable": true,
-                    "type": "string"
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "email": {
-                    "nullable": true,
-                    "type": "string"
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "login": {
                     "type": "string"
@@ -6146,8 +6444,10 @@
                     "format": "uri"
                   },
                   "gravatar_id": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "url": {
                     "type": "string",
@@ -6262,7 +6562,7 @@
         },
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -6271,7 +6571,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -6324,12 +6624,16 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "nullable": true,
-                    "type": "string"
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "email": {
-                    "nullable": true,
-                    "type": "string"
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "login": {
                     "type": "string"
@@ -6346,8 +6650,10 @@
                     "format": "uri"
                   },
                   "gravatar_id": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "url": {
                     "type": "string",
@@ -6520,7 +6826,7 @@
       "parameters": [
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -6529,7 +6835,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -6600,12 +6906,16 @@
                     "format": "int64"
                   },
                   "name": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "primary_key_id": {
-                    "type": "integer",
-                    "nullable": true
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
                   },
                   "key_id": {
                     "type": "string"
@@ -6679,12 +6989,16 @@
                           "type": "string"
                         },
                         "expires_at": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "raw_key": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "revoked": {
                           "type": "boolean"
@@ -6709,16 +7023,20 @@
                     "format": "date-time"
                   },
                   "expires_at": {
-                    "type": "string",
-                    "format": "date-time",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date-time"
                   },
                   "revoked": {
                     "type": "boolean"
                   },
                   "raw_key": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   }
                 },
                 "required": [
@@ -6860,12 +7178,16 @@
                   "format": "int64"
                 },
                 "name": {
-                  "type": "string",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ]
                 },
                 "primary_key_id": {
-                  "type": "integer",
-                  "nullable": true
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
                 },
                 "key_id": {
                   "type": "string"
@@ -6939,12 +7261,16 @@
                         "type": "string"
                       },
                       "expires_at": {
-                        "type": "string",
-                        "nullable": true
+                        "type": [
+                          "string",
+                          "null"
+                        ]
                       },
                       "raw_key": {
-                        "type": "string",
-                        "nullable": true
+                        "type": [
+                          "string",
+                          "null"
+                        ]
                       },
                       "revoked": {
                         "type": "boolean"
@@ -6969,16 +7295,20 @@
                   "format": "date-time"
                 },
                 "expires_at": {
-                  "type": "string",
-                  "format": "date-time",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date-time"
                 },
                 "revoked": {
                   "type": "boolean"
                 },
                 "raw_key": {
-                  "type": "string",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ]
                 }
               },
               "required": [
@@ -7119,12 +7449,16 @@
                   "format": "int64"
                 },
                 "name": {
-                  "type": "string",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ]
                 },
                 "primary_key_id": {
-                  "type": "integer",
-                  "nullable": true
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
                 },
                 "key_id": {
                   "type": "string"
@@ -7198,12 +7532,16 @@
                         "type": "string"
                       },
                       "expires_at": {
-                        "type": "string",
-                        "nullable": true
+                        "type": [
+                          "string",
+                          "null"
+                        ]
                       },
                       "raw_key": {
-                        "type": "string",
-                        "nullable": true
+                        "type": [
+                          "string",
+                          "null"
+                        ]
                       },
                       "revoked": {
                         "type": "boolean"
@@ -7228,16 +7566,20 @@
                   "format": "date-time"
                 },
                 "expires_at": {
-                  "type": "string",
-                  "format": "date-time",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date-time"
                 },
                 "revoked": {
                   "type": "boolean"
                 },
                 "raw_key": {
-                  "type": "string",
-                  "nullable": true
+                  "type": [
+                    "string",
+                    "null"
+                  ]
                 }
               },
               "required": [
@@ -7386,7 +7728,7 @@
         },
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -7395,7 +7737,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -7469,12 +7811,16 @@
                     "format": "int64"
                   },
                   "name": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "primary_key_id": {
-                    "type": "integer",
-                    "nullable": true
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
                   },
                   "key_id": {
                     "type": "string"
@@ -7548,12 +7894,16 @@
                           "type": "string"
                         },
                         "expires_at": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "raw_key": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "revoked": {
                           "type": "boolean"
@@ -7578,16 +7928,20 @@
                     "format": "date-time"
                   },
                   "expires_at": {
-                    "type": "string",
-                    "format": "date-time",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date-time"
                   },
                   "revoked": {
                     "type": "boolean"
                   },
                   "raw_key": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   }
                 },
                 "required": [
@@ -7638,7 +7992,7 @@
       "parameters": [
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -7647,7 +8001,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -7718,8 +8072,10 @@
                     "type": "boolean"
                   },
                   "last_used": {
-                    "nullable": true,
-                    "type": "string",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
                     "format": "date-time"
                   }
                 },
@@ -7846,8 +8202,10 @@
                   "type": "boolean"
                 },
                 "last_used": {
-                  "nullable": true,
-                  "type": "string",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
                   "format": "date-time"
                 }
               },
@@ -7973,8 +8331,10 @@
                   "type": "boolean"
                 },
                 "last_used": {
-                  "nullable": true,
-                  "type": "string",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
                   "format": "date-time"
                 }
               },
@@ -8113,7 +8473,7 @@
         },
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -8122,7 +8482,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -8169,8 +8529,10 @@
                     "format": "date-time"
                   },
                   "last_used": {
-                    "nullable": true,
-                    "type": "string",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
                     "format": "date-time"
                   }
                 },
@@ -8215,7 +8577,7 @@
       "parameters": [
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -8224,7 +8586,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -8498,7 +8860,7 @@
         },
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -8507,7 +8869,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -8587,7 +8949,7 @@
       "parameters": [
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -8596,7 +8958,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -8713,7 +9075,7 @@
         {
           "type": "string",
           "name": "key",
-          "description": "<p>The public SSH key to add to your GitHub account. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys\">Checking for existing SSH keys</a>.\"</p>",
+          "description": "<p>The public SSH key to add to your GitHub account. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys\">Checking for existing SSH keys</a>.\"</p>",
           "isRequired": true
         }
       ],
@@ -8996,7 +9358,7 @@
         },
         {
           "name": "per_page",
-          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The number of results per page (max 100). For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",
@@ -9005,7 +9367,7 @@
         },
         {
           "name": "page",
-          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest//rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
+          "description": "<p>The page number of the results to fetch. For more information, see \"<a href=\"https://docs.github.com/enterprise-cloud@latest/rest/using-the-rest-api/using-pagination-in-the-rest-api\">Using pagination in the REST API</a>.\"</p>",
           "in": "query",
           "schema": {
             "type": "integer",

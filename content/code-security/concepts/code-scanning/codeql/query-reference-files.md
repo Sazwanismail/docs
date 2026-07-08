@@ -1,5 +1,6 @@
 ---
 title: Query reference files
+shortTitle: Query reference files
 intro: You can use query reference files to define the location of a query you want to run in tests.
 product: '{% data reusables.gated-features.codeql %}'
 versions:
@@ -11,6 +12,8 @@ redirect_from:
   - /code-security/codeql-cli/codeql-cli-reference/query-reference-files
   - /code-security/codeql-cli/using-the-advanced-functionality-of-the-codeql-cli/query-reference-files
 contentType: concepts
+category:
+  - Customize vulnerability detection with CodeQL
 ---
 
 ## About query reference files

@@ -1,5 +1,6 @@
 ---
 title: Exit codes
+shortTitle: Exit codes
 intro: Exit codes signify the status of a command after the {% data variables.product.prodname_codeql_cli %} runs it.
 product: '{% data reusables.gated-features.codeql %}'
 versions:
@@ -11,6 +12,8 @@ redirect_from:
   - /code-security/codeql-cli/codeql-cli-reference/exit-codes
   - /code-security/codeql-cli/using-the-advanced-functionality-of-the-codeql-cli/exit-codes
 contentType: reference
+category:
+  - Find CodeQL CLI commands
 ---
 
 ## About exit codes

@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react'
-import { TextInput, ActionMenu, ActionList, Token, Pagination } from '@primer/react'
+import { TextInput, ActionMenu, ActionList, Token } from '@primer/react'
+import { Pagination } from '@primer/react-brand'
 import { SearchIcon } from '@primer/octicons-react'
+import { announce } from '@primer/live-region-element'
 import cx from 'classnames'
 
 import { Link } from '@/frame/components/Link'
@@ -61,6 +63,7 @@ export const ArticleGrid = ({
 
   const inputRef = useRef<HTMLInputElement>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
+  const statusTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   // Read filter state directly from query params
   const searchQuery = params['articles-filter'] || ''
@@ -77,9 +80,10 @@ export const ArticleGrid = ({
   // For bespoke landing pages, show all articles regardless of includedCategories
   const filteredArticlesByLandingType = useMemo(() => {
     if (landingType === 'discovery' && includedCategories && includedCategories.length > 0) {
-      // For discovery pages, only include articles that have at least one matching category
+      // For discovery pages, keep articles that either have a matching category
+      // or have no category at all (uncategorized articles are still part of the content tree).
       return allArticles.filter((article) => {
-        if (!article.category || article.category.length === 0) return false
+        if (!article.category || article.category.length === 0) return true
         return article.category.some((cat) =>
           includedCategories.some((included) => included.toLowerCase() === cat.toLowerCase()),
         )
@@ -229,6 +233,25 @@ export const ArticleGrid = ({
     prevPageRef.current = currentPage
   }, [currentPage])
 
+  // Announce search/filter no-results to assistive technologies.
+  // Uses @primer/live-region-element which renders a <live-region> web component
+  // with a shadow DOM on document.body — completely isolated from React's component
+  // tree. This avoids VoiceOver re-announcing the focused input when React re-renders
+  // cause DOM mutations near the TextInput.
+  const noArticlesFoundMessage = t('article_grid.no_articles_found')
+  useEffect(() => {
+    if (statusTimerRef.current) clearTimeout(statusTimerRef.current)
+
+    if (filteredResults.length === 0) {
+      statusTimerRef.current = setTimeout(() => {
+        announce(noArticlesFoundMessage, { politeness: 'assertive' })
+      }, 750)
+    }
+
+    return () => {
+      if (statusTimerRef.current) clearTimeout(statusTimerRef.current)
+    }
+  }, [filteredResults.length, searchQuery, selectedCategory, noArticlesFoundMessage])
   return (
     <div data-testid="article-grid-container">
       {/* Filter and Search Controls */}
@@ -244,6 +267,7 @@ export const ArticleGrid = ({
           <div className={styles.categoryDropdown}>
             <ActionMenu>
               <ActionMenu.Button>
+                {t('article_grid.filter_by_category')}:{' '}
                 {categories[selectedCategoryIndex] === ALL_CATEGORIES
                   ? t('article_grid.all_categories')
                   : categories[selectedCategoryIndex]}
@@ -271,6 +295,7 @@ export const ArticleGrid = ({
             <TextInput
               leadingVisual={SearchIcon}
               placeholder={t('article_grid.search_articles')}
+              aria-label={t('article_grid.search_articles')}
               ref={inputRef}
               autoComplete="false"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -292,7 +317,11 @@ export const ArticleGrid = ({
           />
         ))}
         {filteredResults.length === 0 && (
-          <div className={styles.noArticlesContainer} data-testid="no-articles-message">
+          <div
+            className={styles.noArticlesContainer}
+            data-testid="no-articles-message"
+            aria-hidden="true"
+          >
             <p className={styles.noArticlesText}>{t('article_grid.no_articles_found')}</p>
           </div>
         )}

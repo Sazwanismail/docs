@@ -88,7 +88,7 @@ Autoscaling allows you to dynamically adjust the number of self-hosted runners b
 
 For more information, see [AUTOTITLE](/actions/hosting-your-own-runners/managing-self-hosted-runners-with-actions-runner-controller/about-actions-runner-controller) and [AUTOTITLE](/actions/hosting-your-own-runners/managing-self-hosted-runners-with-actions-runner-controller/about-support-for-actions-runner-controller).
 
-### {% data variables.product.prodname_actions %} Runner Scale Set Client 
+### {% data variables.product.prodname_actions %} Runner Scale Set Client
 
 The {% data variables.product.prodname_actions %} Runner Scale Set Client is a standalone Go-based module that empowers platform teams, integrators, and infrastructure providers to build custom autoscaling solutions for {% data variables.product.prodname_actions %} runners across VMs, containers, on-premise infrastructure, and cloud services, with support for Windows, Linux, and macOS platforms.
 
@@ -195,7 +195,7 @@ Self-hosted runners connect to {% ifversion fpt or ghec %}{% data variables.prod
 
 In addition, your workflow may require access to other network resources.
 
-If you use an IP address allow list for your {% data variables.product.prodname_dotcom %} organization or enterprise account, you must add your self-hosted runner's IP address to the allow list. See [Managing allowed IP addresses for your organization](/{% ifversion fpt %}enterprise-cloud@latest/{% endif %}/organizations/keeping-your-organization-secure/managing-allowed-ip-addresses-for-your-organization#using-github-actions-with-an-ip-allow-list) or [Enforcing policies for security settings in your enterprise](/{% ifversion fpt %}enterprise-cloud@latest/{% endif %}admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-security-settings-in-your-enterprise){% ifversion fpt %} in the {% data variables.product.prodname_ghe_cloud %} documentation.{% else %}.{% endif %}
+If you use an IP address allow list for your {% data variables.product.prodname_dotcom %} organization or enterprise account, you must add your self-hosted runner's IP address to the allow list. See [Managing allowed IP addresses for your organization](/{% ifversion fpt %}enterprise-cloud@latest/{% endif %}organizations/keeping-your-organization-secure/managing-allowed-ip-addresses-for-your-organization#using-github-actions-with-an-ip-allow-list) or [AUTOTITLE](/{% ifversion fpt %}enterprise-cloud@latest/{% endif %}admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-security-settings-in-your-enterprise){% ifversion fpt %} in the {% data variables.product.prodname_ghe_cloud %} documentation.{% else %}.{% endif %}
 
 {% else %}
 

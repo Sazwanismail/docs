@@ -27,6 +27,14 @@ gh api /meta --hostname octocorp.ghe.com
 
 For more information, see [AUTOTITLE](/rest/meta/meta).
 
+## Using SSH with {% data variables.enterprise.data_residency_site %}
+
+To clone a repository using Git over SSH from `{% data variables.enterprise.data_residency_domain %}`, where SUBDOMAIN is your enterprise's dedicated subdomain on {% data variables.enterprise.data_residency_site %}, use the SUBDOMAIN as the SSH username instead of `git`.
+
+```shell
+git clone SUBDOMAIN@SUBDOMAIN.ghe.com:OWNER/REPO.git
+```
+
 ## {% data variables.product.github %}'s hostnames
 
 * `*.{% data variables.enterprise.data_residency_domain %}`, where SUBDOMAIN is your enterprise's dedicated subdomain on {% data variables.enterprise.data_residency_site %}
@@ -78,7 +86,7 @@ For more information, see [AUTOTITLE](/rest/meta/meta).
 
 ## Supported regions for Azure private networking
 
-If you use Azure private networking for {% data variables.product.company_short %}-hosted runners, the supported Azure regions on {% data variables.enterprise.data_residency_site %} differ from those on {% data variables.product.prodname_dotcom_the_website %}.
+{% data variables.product.company_short %} deploys your runners in the same Azure region as the subnet you connect them to. Because of this, your subnet must be in one of the supported regions. If you use Azure private networking for {% data variables.product.company_short %}-hosted runners, the supported Azure regions on {% data variables.enterprise.data_residency_site %} differ from those on {% data variables.product.prodname_dotcom_the_website %}.
 
 ### Supported regions in the EU
 
@@ -192,6 +200,8 @@ Japan region:
 #### EU
 
 `*.blob.core.windows.net` can be replaced with:
+* `memoryalphaprodsdc01.blob.core.windows.net`
+* `memoryalphaprodweu01.blob.core.windows.net`
 * `prodsdc01resultssa0.blob.core.windows.net`
 * `prodsdc01resultssa1.blob.core.windows.net`
 * `prodsdc01resultssa2.blob.core.windows.net`
@@ -204,6 +214,7 @@ Japan region:
 #### Australia
 
 `*.blob.core.windows.net` can be replaced with:
+* `memoryalphaprodae01.blob.core.windows.net`
 * `prodae01resultssa0.blob.core.windows.net`
 * `prodae01resultssa1.blob.core.windows.net`
 * `prodae01resultssa2.blob.core.windows.net`
@@ -212,6 +223,7 @@ Japan region:
 #### Japan
 
 `*.blob.core.windows.net` can be replaced with:
+* `memoryalphaprodjpw01.blob.core.windows.net`
 * `prodjpw01resultssa0.blob.core.windows.net`
 * `prodjpw01resultssa1.blob.core.windows.net`
 * `prodjpw01resultssa2.blob.core.windows.net`

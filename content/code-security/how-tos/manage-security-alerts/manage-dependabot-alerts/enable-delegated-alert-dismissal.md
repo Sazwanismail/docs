@@ -8,6 +8,8 @@ versions:
 contentType: how-tos
 redirect_from:
   - /code-security/dependabot/dependabot-alerts/enable-delegated-alert-dismissal
+category:
+  - Secure your dependencies
 ---
 
 {% data reusables.security.delegated-alert-dismissal-capacity %}
@@ -18,8 +20,7 @@ redirect_from:
 
 {% data reusables.repositories.navigate-to-repo %}
 {% data reusables.repositories.sidebar-settings %}
-{% data reusables.repositories.navigate-to-code-security-and-analysis %}{% ifversion ghas-products %}{% else %}
-{% data reusables.repositories.navigate-to-ghas-settings %}{% endif %}
+{% data reusables.repositories.navigate-to-code-security-and-analysis %}
 1. In the "{% data variables.product.prodname_dependabot %}" section, next to "Prevent direct alert dismissals", click **Enable**.
 
 ## Configuring delegated dismissal for an organization

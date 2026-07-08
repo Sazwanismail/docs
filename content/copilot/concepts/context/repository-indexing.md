@@ -30,11 +30,11 @@ When you start a conversation with {% data variables.copilot.copilot_chat_short 
 
 For more information on how to ask questions, see [AUTOTITLE](/copilot/using-github-copilot/asking-github-copilot-questions-in-github).
 
-## Semantic code search in {% data variables.copilot.copilot_coding_agent %}
+## Semantic code search in {% data variables.copilot.copilot_cloud_agent %}
 
-{% data variables.copilot.copilot_coding_agent %} uses semantic code search to find relevant code based on meaning, rather than relying solely on exact text matches with tools like `grep`. When the agent doesn't know the precise names or patterns to search for, semantic code search helps it locate the right code faster. No configuration is required—the agent automatically uses semantic code search when appropriate.
+{% data variables.copilot.copilot_cloud_agent %} uses semantic code search to find relevant code based on meaning, rather than relying solely on exact text matches with tools like `grep`. When the agent doesn't know the precise names or patterns to search for, semantic code search helps it locate the right code faster. No configuration is required—the agent automatically uses semantic code search when appropriate.
 
-For more information about {% data variables.copilot.copilot_coding_agent %}, see [AUTOTITLE](/copilot/concepts/agents/coding-agent/about-coding-agent).
+For more information about {% data variables.copilot.copilot_cloud_agent %}, see [AUTOTITLE](/copilot/concepts/agents/cloud-agent/about-cloud-agent).
 
 ## About index creation and use
 
@@ -43,9 +43,18 @@ Indexing runs in the background and initial indexing can take up to 60 seconds f
 Once an index has been created for a repository, it can be used by:
 
 * {% data variables.copilot.copilot_chat_short %} in {% data variables.product.github %} and {% data variables.product.prodname_vscode %}
-* {% data variables.copilot.copilot_coding_agent %}
+* {% data variables.copilot.copilot_cloud_agent %}
 
 > [!TIP] There is no limit to how many repositories you can index.
+
+## Semantic indexing for non-{% data variables.product.github %} repositories
+
+{% data variables.product.prodname_copilot_short %} in {% data variables.product.prodname_vscode %} can use semantic indexing for workspace files from repositories hosted outside {% data variables.product.github %}, such as GitLab and local repositories. This feature uploads your data to {% data variables.product.github %} to make it searchable.
+
+This feature is controlled by policy and is disabled by default. For organizations and enterprises with {% data variables.copilot.copilot_business_short %} or {% data variables.copilot.copilot_enterprise_short %}, an enterprise owner or organization owner must explicitly set the `Semantic indexing for non-GitHub repositories` policy to **Enabled** before members can use it. If the policy remains **Unconfigured**, the feature stays unavailable. See:
+
+* [AUTOTITLE](/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-enterprise-policies)
+* [AUTOTITLE](/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies)
 
 ## Excluding content from {% data variables.copilot.copilot_chat_short %} answers
 

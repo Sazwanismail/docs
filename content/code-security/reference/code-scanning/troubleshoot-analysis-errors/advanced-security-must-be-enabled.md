@@ -11,6 +11,8 @@ redirect_from:
   - /code-security/code-scanning/troubleshooting-code-scanning/advanced-security-must-be-enabled
   - /code-security/how-tos/scan-code-for-vulnerabilities/troubleshooting/troubleshooting-analysis-errors/advanced-security-must-be-enabled
 contentType: reference
+category:
+  - Troubleshoot security tools
 ---
 
 ## About this error
@@ -35,15 +37,9 @@ If you are on a **{% data variables.product.prodname_free_team %}** or **{% data
 {% data reusables.repositories.navigate-to-code-security-and-analysis %}
 1. On the settings page, scroll down to "{% data variables.product.prodname_code_security %}."
 1. If there is an associated and active **Enable** button, {% data variables.product.prodname_GH_code_security %} is available for this repository but not yet enabled.
-{% ifversion ghas-products %}
 1. If use of {% data variables.product.prodname_GH_code_security %} is blocked by a policy, "{% octicon "shield" aria-hidden="true" aria-label="shield" %} Disabled" is shown in place of the **Enable** button.
 
    !["Screenshot of the {% data variables.product.prodname_AS %}" setting. The disabled option is highlighted in dark orange.](/assets/images/help/repository/ghas-enterprise-policy-block.png)
-{% else %}
-1. If use of {% data variables.product.prodname_GH_code_security %} is blocked by a policy, the **Enable** button is inactive and the owner of the policy is listed.
-
-   !["Screenshot of the {% data variables.product.prodname_AS %}" setting. The enterprise policy owner and the inactive "Enable" button are highlighted in dark orange.](/assets/images/help/repository/ghas-enterprise-policy-block-ghas.png)
-{% endif %}
 
 ## Fixing the problem
 

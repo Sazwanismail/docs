@@ -219,6 +219,100 @@ See [Using [brackets] in text](/guides/brackets).
 
     expect(result.internalLinks).toHaveLength(2)
   })
+
+  test('extracts reference-style link definitions', () => {
+    const content = `
+See [the guide][ssh-agent] for details.
+Also [generating keys][gen-keys].
+
+[ssh-agent]: /authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding
+[gen-keys]: /authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key
+`
+    const result = extractLinksFromMarkdown(content)
+
+    expect(result.internalLinks).toHaveLength(2)
+    expect(result.internalLinks[0].href).toBe(
+      '/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding',
+    )
+    // Anchor fragment should be stripped from the href
+    expect(result.internalLinks[1].href).toBe(
+      '/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent',
+    )
+  })
+
+  test('reports correct line numbers for reference-style link definitions', () => {
+    const content = `Line 1
+Line 2
+
+[ref-a]: /path/one
+[ref-b]: /path/two
+`
+    const result = extractLinksFromMarkdown(content)
+
+    expect(result.internalLinks).toHaveLength(2)
+    expect(result.internalLinks[0].line).toBe(4)
+    expect(result.internalLinks[1].line).toBe(5)
+  })
+
+  test('does not extract external reference-style link definitions', () => {
+    const content = `
+[external]: https://example.com
+[internal]: /docs/overview
+`
+    const result = extractLinksFromMarkdown(content)
+
+    expect(result.internalLinks).toHaveLength(1)
+    expect(result.internalLinks[0].href).toBe('/docs/overview')
+  })
+})
+
+describe('liquidPrefixedLinks', () => {
+  test('extracts links whose href starts with a Liquid tag', () => {
+    const content = `
+See [About EMUs]({% ifversion fpt or ghes %}/enterprise-cloud@latest{% endif %}/admin/identity-and-access-management/about-enterprise-managed-users).
+`
+    const result = extractLinksFromMarkdown(content)
+
+    expect(result.liquidPrefixedLinks).toHaveLength(1)
+    expect(result.liquidPrefixedLinks[0].href).toBe(
+      '{% ifversion fpt or ghes %}/enterprise-cloud@latest{% endif %}/admin/identity-and-access-management/about-enterprise-managed-users',
+    )
+  })
+
+  test('does not include Liquid-prefixed links in internalLinks', () => {
+    const content = `
+See [AUTOTITLE]({% ifversion not ghes %}/enterprise-server@latest{% endif %}/admin/overview).
+Also see [normal link](/actions/overview).
+`
+    const result = extractLinksFromMarkdown(content)
+
+    expect(result.internalLinks).toHaveLength(1)
+    expect(result.internalLinks[0].href).toBe('/actions/overview')
+    expect(result.liquidPrefixedLinks).toHaveLength(1)
+  })
+
+  test('reports correct line numbers for Liquid-prefixed links', () => {
+    const content = `Line 1
+Line 2
+See [AUTOTITLE]({% ifversion not ghes %}/enterprise-server@latest{% endif %}/admin/overview).
+Line 4
+See [AUTOTITLE]({% ifversion fpt %}/enterprise-cloud@latest{% endif %}/billing/overview).
+`
+    const result = extractLinksFromMarkdown(content)
+
+    expect(result.liquidPrefixedLinks).toHaveLength(2)
+    expect(result.liquidPrefixedLinks[0].line).toBe(3)
+    expect(result.liquidPrefixedLinks[1].line).toBe(5)
+  })
+
+  test('returns empty liquidPrefixedLinks when none present', () => {
+    const content = `
+See [normal link](/actions/overview) for details.
+`
+    const result = extractLinksFromMarkdown(content)
+
+    expect(result.liquidPrefixedLinks).toHaveLength(0)
+  })
 })
 
 describe('normalizeLinkPath', () => {
@@ -242,6 +336,22 @@ describe('normalizeLinkPath', () => {
     expect(normalizeLinkPath('/en/enterprise-server@3.10/admin/overview/#setup')).toBe(
       '/en/enterprise-server@3.10/admin/overview',
     )
+  })
+
+  test('removes query string', () => {
+    expect(normalizeLinkPath('/actions/guides?tab=cli')).toBe('/actions/guides')
+  })
+
+  test('removes query string before anchor fragment', () => {
+    expect(normalizeLinkPath('/actions/guides?tab=cli#section')).toBe('/actions/guides')
+  })
+
+  test('removes query string with trailing slash', () => {
+    expect(normalizeLinkPath('/actions/guides/?tab=cli')).toBe('/actions/guides')
+  })
+
+  test('handles path with only a query string (no anchor)', () => {
+    expect(normalizeLinkPath('/repositories/overview?version=3')).toBe('/repositories/overview')
   })
 })
 
@@ -323,6 +433,63 @@ describe('checkInternalLink', () => {
     expect(result.exists).toBe(true)
     expect(result.isRedirect).toBe(true)
     expect(result.redirectTarget).toBe('/actions/current-path')
+  })
+
+  test('treats archived Enterprise Server versions as valid', () => {
+    // Deprecated GHES versions are served by the archived enterprise versions
+    // system, which isn't loaded into pageMap. They must not be reported broken.
+    const result = checkInternalLink(
+      '/enterprise-server@3.7/admin/release-notes',
+      pageMap,
+      redirects,
+    )
+    expect(result.exists).toBe(true)
+    expect(result.isRedirect).toBe(false)
+  })
+
+  test('treats legacy /enterprise/<version>/ archived paths as valid', () => {
+    const result = checkInternalLink(
+      '/enterprise/2.1/admin/guides/installation/provisioning-and-installation/',
+      pageMap,
+      redirects,
+    )
+    expect(result.exists).toBe(true)
+    expect(result.isRedirect).toBe(false)
+  })
+
+  test('resolves free-pro-team@latest prefixed links via the redirect resolver', () => {
+    // The flat redirects map has no literal key for this; getRedirect computes
+    // the correction (strip the version prefix) the same way production does.
+    const result = checkInternalLink('/free-pro-team@latest/actions/guides', pageMap, redirects)
+    expect(result.exists).toBe(true)
+    expect(result.isRedirect).toBe(true)
+    expect(result.redirectTarget).toBe('/actions/guides')
+  })
+
+  test('resolves versionless /enterprise-server/ links via the redirect resolver', () => {
+    const result = checkInternalLink(`/enterprise-server/admin/overview`, pageMap, redirects)
+    expect(result.exists).toBe(true)
+    expect(result.isRedirect).toBe(true)
+    // Normalized to the latest stable Enterprise Server version.
+    expect(result.redirectTarget).toBe(`/enterprise-server@${latestStable}/admin/overview`)
+  })
+
+  test('strips hyphenated locale prefixes without double-prefixing', () => {
+    // /pt-br/ is a hyphenated locale; it must be stripped (not turned into
+    // /en/pt-br/...) so the underlying path resolves against the redirects map.
+    const result = checkInternalLink('/pt-br/actions/legacy-path', pageMap, redirects)
+    expect(result.exists).toBe(true)
+    expect(result.isRedirect).toBe(true)
+    expect(result.redirectTarget).toBe('/actions/current-path')
+  })
+
+  test('normalizes a bare language-root redirect target to /', () => {
+    // getRedirect collapses '/free-pro-team@latest' to the language root ('/en');
+    // after stripping the locale that would be empty, so it must normalize to '/'.
+    const result = checkInternalLink('/free-pro-team@latest', pageMap, redirects)
+    expect(result.exists).toBe(true)
+    expect(result.isRedirect).toBe(true)
+    expect(result.redirectTarget).toBe('/')
   })
 })
 
