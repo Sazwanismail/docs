@@ -1,0 +1,411 @@
+YAML 是一种人类可读的数据序列化语言，全称是 YAML Ain't Markup Language（YAML 不是标记语言）。它常被用于写配置文件，比如 Docker Compose、Kubernetes、Ansible 等。
+
+主要特点
+
+· 纯文本、可读性强：用缩进（空格，不能用Tab）表示层级关系，很像大纲。
+· 数据类型丰富：支持字符串、数字、布尔值、数组（列表）、对象（字典）等。
+· 注释方便：用 # 开头的行即为注释。
+· 无闭合标签：不像 XML 需要 </xxx>，也不像 JSON 需要大括号和引号（多数情况字符串不加引号也行）。
+
+简单示例
+
+```yaml
+# 个人信息
+name: 张三
+age: 28
+is_student: false
+hobbies:
+  - 阅读
+  - 游泳
+address:
+  city: 北京
+  street: 长安街 1 号
+```
+
+等价 JSON 会是：
+
+```json
+{
+  "name": "张三",
+  "age": 28,
+  "is_student": false,
+  "hobbies": ["阅读", "游泳"],
+  "address": {
+    "city": "北京",
+    "street": "长安街 1 号"
+  }
+}
+```
+
+常见用途
+
+· CI/CD 配置（如 GitHub Actions、GitLab CI）
+· 容器编排（Docker Compose、Kubernetes 资源定义）
+· 自动化工具（Ansible Playbook）
+· 应用配置（Spring Boot、Rails 的 application.yml）
+
+如果你想了解更具体的用法，或想看看某个场景下的 YAML 示例，可以告诉我～明白了，我再介绍一次 YAML。
+
+---
+
+YAML（YAML Ain't Markup Language）是一种以数据为中心、人类易读的序列化语言，专门用来写配置文件。
+
+核心规则
+
+· 用 缩进（只能是空格，不能用 Tab）表示层级关系。
+· 使用 # 写注释。
+· 键值对用 key: value 表示。
+· 列表用 -  开头。
+· 支持字符串、数字、布尔值、空值等，字符串大多可以不加引号。
+
+一个典型例子
+
+```yaml
+# 应用配置
+server:
+  port: 8080
+  host: localhost
+
+database:
+  username: admin
+  password: secret123
+  hosts:
+    - 192.168.1.10
+    - 192.168.1.11
+  options:
+    ssl: true
+    timeout: 30
+```
+
+等价 JSON：
+
+```json
+{
+  "server": {
+    "port": 8080,
+    "host": "localhost"
+  },
+  "database": {
+    "username": "admin",
+    "password": "secret123",
+    "hosts": ["192.168.1.10", "192.168.1.11"],
+    "options": {
+      "ssl": true,
+      "timeout": 30
+    }
+  }
+}
+```
+
+常见应用场景
+
+· Docker Compose 定义服务
+· Kubernetes 资源清单
+· GitHub Actions / GitLab CI 流水线
+· Ansible 自动化剧本
+· Spring Boot 的 application.yml
+
+如果你是想让我用另一种方式讲解，或者只想看某个具体用法，可以再告诉我～Baik, saya terangkan YAML dalam Bahasa Melayu dan Bahasa Inggeris. / Got it, I’ll explain YAML in Malay and English.
+
+---
+
+Bahasa Melayu 🇲🇾
+
+YAML (YAML Ain't Markup Language) ialah bahasa bersiri data yang mudah dibaca manusia, biasanya digunakan untuk fail konfigurasi.
+
+Ciri utama:
+
+· Menggunakan inden (ruang kosong, bukan Tab) untuk menunjukkan hierarki.
+· Komen guna simbol #.
+· Data disimpan sebagai pasangan kunci: nilai.
+· Senarai ditulis dengan - .
+· Menyokong jenis data seperti rentetan, nombor, boolean dan null.
+
+Contoh:
+
+```yaml
+nama: Ali
+umur: 25
+hobi:
+  - membaca
+  - berenang
+alamat:
+  bandar: Kuala Lumpur
+  poskod: 50000
+```
+
+Kegunaan popular:
+
+· Docker Compose, Kubernetes, Ansible
+· GitHub Actions / GitLab CI
+· Fail konfigurasi aplikasi (Spring Boot, dsb.)
+
+---
+
+English 🇬🇧
+
+YAML (YAML Ain't Markup Language) is a human-readable data serialization language, mainly used for configuration files.
+
+Key features:
+
+· Uses indentation (spaces only, no tabs) to represent structure.
+· Comments start with #.
+· Data is written as key: value pairs.
+· Lists use a dash - .
+· Supports strings, numbers, booleans, and null.
+
+Example:
+
+```yaml
+name: Ali
+age: 25
+hobbies:
+  - reading
+  - swimming
+address:
+  city: Kuala Lumpur
+  postcode: 50000
+```
+
+Common uses:
+
+· Docker Compose, Kubernetes, Ansible
+· GitHub Actions / GitLab CI
+· Application configuration files (Spring Boot, etc.)
+
+---
+
+Let me know if you need a more detailed explanation in either language!
+I think you’re asking about all the data types supported in YAML. Here’s a complete list with examples.
+
+---
+
+1. Scalars (single values)
+
+Strings
+
+```yaml
+name: Ali
+greeting: "Hello, world!"
+description: |
+  This is a multi-line
+  string block.
+```
+
+Numbers
+
+```yaml
+age: 25
+price: 19.99
+scientific: 1.2e3   # 1200
+```
+
+Booleans
+
+```yaml
+active: true
+disabled: false
+```
+
+(Also accepts yes/no, on/off)
+
+Null
+
+```yaml
+middle_name: null
+spouse: ~          # also means null
+```
+
+Dates & Times (usually parsed as strings unless a schema is used)
+
+```yaml
+birthday: 1998-07-23
+meeting_time: 2026-07-13T09:30:00+08:00
+```
+
+---
+
+2. Sequences (lists / arrays)
+
+```yaml
+hobbies:
+  - reading
+  - swimming
+  - hiking
+```
+
+Can also be written inline:
+
+```yaml
+numbers: [1, 2, 3]
+```
+
+---
+
+3. Mappings (dictionaries / objects)
+
+```yaml
+address:
+  city: Kuala Lumpur
+  postcode: 50000
+```
+
+Inline mapping:
+
+```yaml
+point: {x: 10, y: 20}
+```
+
+---
+
+4. Special types
+
+Anchors & Aliases (reuse data)
+
+```yaml
+defaults: &default
+  timeout: 30
+  retry: 3
+
+service_a:
+  <<: *default
+  name: auth
+
+service_b:
+  <<: *default
+  name: payment
+```
+
+Tags (explicit data type hints)
+
+```yaml
+explicit_string: !!str 123
+explicit_int: !!int "456"
+```
+
+Binary (Base64 encoded)
+
+```yaml
+file_data: !!binary |
+  R0lGODlhDAAMAIQAAP//9/X17unp5W...
+```
+
+Sets (unique values, using ? syntax)
+
+```yaml
+unique_colors:
+  ? red
+  ? green
+  ? blue
+```
+
+---
+
+5. Multi-document YAML (using --- and ...)
+
+```yaml
+---
+document: 1
+...
+---
+document: 2
+...
+```
+
+---
+
+That covers all the core data types in YAML. Let me know if you’d like this translated into Bahasa Melayu as well.
+Got it — after “All data”, you're now asking about “All URLs” in YAML.
+
+There is no special URL data type in YAML. A URL is just a string. However, there are some best practices and gotchas when writing URLs in YAML.
+
+---
+
+Basic URL (no quotes needed if it’s simple)
+
+```yaml
+website: https://example.com
+```
+
+✅ Works fine because it doesn't contain special YAML characters that break parsing.
+
+---
+
+When you must use quotes
+
+If a URL contains characters that YAML could misinterpret — like :, #, {, }, [, ], ,, &, *, ?, |, >, !, % — you should quote it.
+
+```yaml
+# ❌ YAML sees this as a key-value pair due to the colon after 'https'
+url: https://example.com:8080/path  # This will cause an error
+
+# ✅ Use quotes
+url: "https://example.com:8080/path"
+```
+
+Colon (:) followed by a space is a common problem. As a rule of thumb, if the URL contains:
+
+· a port: :8080
+· a fragment: #section
+· query parameters like ?x=1&y=2
+
+…wrap it in single or double quotes:
+
+```yaml
+login_url: "https://auth.example.com/login?redirect=/dashboard"
+doc_url: 'https://docs.example.com#installation'
+```
+
+---
+
+Multi-line or very long URLs
+
+Use a block scalar (> or |) to break a long URL without adding line breaks in the actual data.
+
+```yaml
+# Folded block (line breaks become spaces)
+download_link: >
+  https://cdn.example.com/releases/
+  v2.3.0/software.zip?token=abc123
+```
+
+The value will be:
+https://cdn.example.com/releases/ v2.3.0/software.zip?token=abc123 (note the space after /releases/ — be careful).
+Better to put the entire URL on one line if possible, or use a literal block only if it genuinely spans multiple lines without breaking the URL.
+
+For a literal block (|), line breaks are preserved (not suitable for a URL unless you really want them).
+
+---
+
+Using YAML anchors for repeated URLs
+
+If the same URL appears many times, you can define it once and reuse it:
+
+```yaml
+base: &base_url https://api.example.com/v1
+services:
+  users: *base_url/users
+  orders: *base_url/orders
+```
+
+---
+
+Representing a URL as a special tag (optional)
+
+YAML allows custom tags. You could explicitly mark a value as a URL with something like:
+
+```yaml
+homepage: !<tag:example.com,2026:url> https://example.com
+```
+
+But this is schema-dependent and not part of standard YAML; almost nobody does this.
+
+---
+
+If you meant something else — like a list of all official YAML specification URLs — here are the key ones:
+
+· Official website: https://yaml.org
+· Specification v1.2.2: https://yaml.org/spec/1.2.2/
+· YAML Aint Markup Language (Wikipedia): not a spec, but useful reference.
+
+Let me know if you need this in Malay/English again.
