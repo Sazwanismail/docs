@@ -15,7 +15,7 @@ redirect_from:
 
 > [!NOTE]
 > * This feature is in {% data variables.release-phases.public_preview %} and subject to change.
-> * {% data variables.product.prodname_copilot %} uses AI. Check for mistakes. See [AUTOTITLE](/copilot/responsible-use/copilot-cloud-agent)
+> * {% data variables.product.prodname_copilot %} uses AI. Check for mistakes. See [AUTOTITLE](/copilot/responsible-use/agents).
 
 ## Introduction
 

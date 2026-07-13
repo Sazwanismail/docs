@@ -229,7 +229,7 @@ When diff mode is open (entered via `/diff`):
 | `/logout`                                           | Log out of {% data variables.product.prodname_copilot_short %}. |
 | `/lsp [show\|test\|reload\|help] [SERVER-NAME]`     | Manage the language server configuration. |
 | `/mcp [show\|add\|edit\|delete\|disable\|enable\|auth\|reload\|search] [SERVER-NAME]` | Manage the MCP server configuration. See [AUTOTITLE](/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers#managing-mcp-servers). |
-| `/model`, `/models [MODEL]`                         | Select the AI model you want to use, or choose **Auto**. See [AUTOTITLE](/copilot/concepts/auto-model-selection). |
+| `/model`, `/models [MODEL]`                         | Select the AI model you want to use, or choose **Auto**. See [AUTOTITLE](/copilot/concepts/models/auto-model-selection). |
 | `/permissions [show\|reset]`                        | View or clear in-memory tool and path approvals for the current session. |
 | `/plan [PROMPT]`                                    | Create an implementation plan before coding. |
 | `/plugin [marketplace\|install\|uninstall\|update\|list] [ARGS...]` | Manage plugins and plugin marketplaces. See [AUTOTITLE](/copilot/concepts/agents/about-plugins). |
@@ -248,7 +248,7 @@ When diff mode is open (entered via `/diff`):
 | `/session [info\|checkpoints [n]\|files\|plan\|rename [NAME]\|cleanup\|prune\|delete [ID]\|delete-all]`, `/sessions [info\|checkpoints [n]\|files\|plan\|rename [NAME]\|cleanup\|prune\|delete [ID]\|delete-all]`  | Show session information and manage sessions. The `info` subcommand shows session details including the session link (when available). Subcommands: `info`, `checkpoints`, `files`, `plan`, `rename`, `cleanup`, `prune`, `delete`, `delete-all`. |
 | `/settings [show KEY\|KEY\|KEY VALUE]`,<br>`/config [show KEY\|KEY\|KEY VALUE]` | Open the settings editor, open it focused on a specific setting (`KEY`), set a setting inline (`KEY VALUE`), or display a setting's current value (`show KEY`). See [AUTOTITLE](/copilot/how-tos/copilot-cli/customize-copilot/change-settings). |
 | `/share [file\|html\|gist] [session\|research] [PATH]`, `/export [file\|html\|gist] [session\|research] [PATH]` | Share the session to a Markdown file, interactive HTML file, or {% data variables.product.github %} gist. |
-| `/skills [list\|info\|add\|remove\|reload] [ARGS...]`   | Manage skills for enhanced capabilities. See [AUTOTITLE](/copilot/how-tos/copilot-cli/customize-copilot/create-skills). |
+| `/skills [list\|info\|add\|remove\|reload] [ARGS...]`   | Manage skills for enhanced capabilities. See [AUTOTITLE](/copilot/how-tos/copilot-cli/customize-copilot/add-skills). |
 | `/statusline`, `/footer`                            | Configure which items appear in the status line. |
 | `/subagents`, `/agents`                             | Configure default and per-agent subagent models. See [AUTOTITLE](/copilot/reference/copilot-cli-reference/cli-config-dir-reference#configuration-file-settings). |
 | `/tasks`                                            | View and manage tasks (subagents and shell commands). |
@@ -279,12 +279,12 @@ For a complete list of available slash commands enter `/help` in the CLI's inter
 | `--allow-all-paths`                | Disable file path verification and allow access to any path. |
 | `--allow-all-tools`                | Allow all tools to run automatically without confirmation. Required when using the CLI programmatically (env: `COPILOT_ALLOW_ALL`). |
 | `--allow-all-urls`                 | Allow access to all URLs without confirmation. |
-| `--allow-tool=TOOL ...`            | Tools the CLI has permission to use. Will not prompt for permission. For multiple tools, use a quoted, comma-separated list. See [AUTOTITLE](/copilot/how-tos/copilot-cli/allowing-tools#allowing-or-denying-permission-for-specific-tools). |
+| `--allow-tool=TOOL ...`            | Tools the CLI has permission to use. Will not prompt for permission. For multiple tools, use a quoted, comma-separated list. See [AUTOTITLE](/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools#allowing-or-denying-permission-for-specific-tools). |
 | `--allow-url=URL ...`              | Allow access to specific URLs or domains. For multiple URLs, use a quoted, comma-separated list. |
 | `--acp`                            | Start as Agent Client Protocol server. |
 | `--attachment PATH`                | Attach a file to the initial prompt (can be used multiple times). Image files are accepted, but sending them successfully requires the selected model and organization policy to allow vision input. |
 | `--autopilot`                      | Enable autopilot continuation—the agent keeps working until `task_complete` is called, then returns to interactive mode. See [AUTOTITLE](/copilot/concepts/agents/copilot-cli/autopilot). |
-| `--available-tools=TOOL ...`       | Only these tools will be available to the model. For multiple tools, use a quoted, comma-separated list. See [AUTOTITLE](/copilot/how-tos/copilot-cli/allowing-tools). |
+| `--available-tools=TOOL ...`       | Only these tools will be available to the model. For multiple tools, use a quoted, comma-separated list. See [AUTOTITLE](/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools). |
 | `--banner`, `--no-banner`          | Show or hide the startup banner. |
 | `--bash-env`                       | Enable `BASH_ENV` support for bash shells. |
 | `-C DIRECTORY`                     | Change working directory before doing anything else. |
@@ -311,7 +311,7 @@ For a complete list of available slash commands enter `/help` in the CLI's inter
 | `--log-level=LEVEL`                | Set the log level (choices: `none`, `error`, `warning`, `info`, `debug`, `all`, `default`). |
 | `--max-autopilot-continues=COUNT`  | Maximum number of continuation messages in autopilot mode (default: unlimited). See [AUTOTITLE](/copilot/concepts/agents/copilot-cli/autopilot). |
 | `--mode=MODE`                      | Set the initial agent mode (choices: `interactive`, `plan`, `autopilot`). Cannot be combined with `--autopilot` or `--plan`. |
-| `--model=MODEL`                    | Set the AI model you want to use. Pass `auto` as the value to let {% data variables.product.prodname_copilot_short %} pick the best available model automatically. See [AUTOTITLE](/copilot/concepts/auto-model-selection). |
+| `--model=MODEL`                    | Set the AI model you want to use. Pass `auto` as the value to let {% data variables.product.prodname_copilot_short %} pick the best available model automatically. See [AUTOTITLE](/copilot/concepts/models/auto-model-selection). |
 | `--mouse[=VALUE]`                  | Enable or disable mouse support in the interactive interface. VALUE can be `on` (default) or `off`. When enabled, the CLI captures mouse events—scroll wheel, clicks, and so on—to navigate its own interface, such as scrolling the timeline or clicking tabs. When disabled, the terminal's native mouse behavior, such as text selection and scrollback, is preserved. When you set this option explicitly, the value is persisted to your configuration file. |
 | `-n NAME`, `--name=NAME`           | Set a name for the new session. Used by `--resume` and `/resume` to find sessions by name. |
 | `--no-ask-user`                    | Disable the `ask_user` tool (the agent works autonomously without asking questions). |
@@ -504,7 +504,7 @@ The CLI looks for the `copilot-instructions.md` file on startup, and if it's mis
 
 If you don't want to create this file, you can permanently hide this startup message for the current repository by using the `/init suppress` slash command.
 
-For more information, see [AUTOTITLE](/copilot/how-tos/configure-custom-instructions/add-repository-instructions).
+For more information, see [AUTOTITLE](/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions).
 
 ## Hooks reference
 
@@ -699,7 +699,7 @@ MCP servers from different sources are merged in priority order (highest first).
 1. `~/.copilot/mcp-config.json` (lowest)
 
 > [!NOTE]
-> Workspace MCP servers (`.mcp.json` and `.github/mcp.json`) are loaded in both interactive and SDK server-mode sessions, provided the working directory is trusted. For more information about folder trust, see [AUTOTITLE](/copilot/how-tos/copilot-cli/allowing-tools).
+> Workspace MCP servers (`.mcp.json` and `.github/mcp.json`) are loaded in both interactive and SDK server-mode sessions, provided the working directory is trusted. For more information about folder trust, see [AUTOTITLE](/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools).
 
 ### Enterprise MCP allowlist
 

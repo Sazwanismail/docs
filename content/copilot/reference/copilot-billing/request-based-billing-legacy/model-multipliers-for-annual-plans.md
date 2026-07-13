@@ -51,5 +51,5 @@ The following table shows the model multipliers per supported model.
 
 ## Further reading
 
-* To learn more about premium requests, see [AUTOTITLE](/copilot/managing-copilot/monitoring-usage-and-entitlements/about-premium-requests).
+* To learn more about premium requests, see [AUTOTITLE](/copilot/reference/copilot-billing/request-based-billing-legacy/copilot-requests).
 * To understand more about how the new usage-based billing model works, see [AUTOTITLE](/copilot/concepts/billing/usage-based-billing-for-individuals).

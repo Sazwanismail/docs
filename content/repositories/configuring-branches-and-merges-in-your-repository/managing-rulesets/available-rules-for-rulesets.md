@@ -190,7 +190,7 @@ If someone force pushes to a branch or tag, commits that other collaborators hav
 
 Enabling force pushes will not override any other rules. For example, if a branch requires a linear commit history, you cannot force push merge commits to that branch.
 
-{% ifversion ghes %}You cannot enable force pushes for a branch if a site administrator has blocked force pushes to all branches in your repository. For more information, see [AUTOTITLE](/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise).
+{% ifversion ghes %}You cannot enable force pushes for a branch if a site administrator has blocked force pushes to all branches in your repository. For more information, see [AUTOTITLE](/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise).
 
 If a site administrator has blocked force pushes to the default branch only, you can still enable force pushes for any other branch or tag.{% endif %}
 
@@ -200,7 +200,7 @@ If your repositories are configured with {% data variables.product.prodname_code
 
 {% data reusables.code-scanning.merge-protection-rulesets-conditions %}
 
-For more information, see [AUTOTITLE](/code-security/code-scanning/managing-your-code-scanning-configuration/set-code-scanning-merge-protection). For more general information about {% data variables.product.prodname_code_scanning %}, see [AUTOTITLE](/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning).
+For more information, see [AUTOTITLE](/code-security/how-tos/find-and-fix-code-vulnerabilities/manage-your-configuration/set-merge-protection). For more general information about {% data variables.product.prodname_code_scanning %}, see [AUTOTITLE](/code-security/concepts/code-scanning/code-scanning).
 
 {% ifversion code-quality %}
 
@@ -212,7 +212,7 @@ If your repositories are configured with {% data variables.product.prodname_code
 * Analysis fails for any reason, for example: you have exhausted your budget for actions minutes.
 * {% data variables.product.prodname_code_quality_short %} found a result of a severity of the level defined in the ruleset, or a higher severity.
 
-For more information, see [AUTOTITLE](/code-security/code-quality/concepts/about-code-quality) and [AUTOTITLE](/code-security/code-quality/how-tos/set-pr-thresholds).
+For more information, see [AUTOTITLE](/code-security/concepts/about-code-quality) and [AUTOTITLE](/code-security/how-tos/maintain-quality-code/set-pr-thresholds).
 
 ## Restrict code coverage
 
@@ -240,9 +240,9 @@ For more information about troubleshooting common ruleset workflow configuration
 
 ### Using a workflow file
 
-To use this rule, you must first create a workflow file. The workflow file needs to be in a repository that matches the visibility of the repositories you want to run it in. Specifically, a public workflow can run on any repository in your organization, an internal workflow can only run on internal and private repositories, and a private workflow can only run on private repositories. For more information, see [AUTOTITLE](/actions/using-workflows/about-workflows).
+To use this rule, you must first create a workflow file. The workflow file needs to be in a repository that matches the visibility of the repositories you want to run it in. Specifically, a public workflow can run on any repository in your organization, an internal workflow can only run on internal and private repositories, and a private workflow can only run on private repositories. For more information, see [AUTOTITLE](/actions/concepts/workflows-and-actions/workflows).
 
-If the workflow file is in an internal or private repository and you want to use the workflow in other repositories in the organization, you will need to allow access to the workflow from outside the repository. For more information, see [Allowing access to components in an internal repository](/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#allowing-access-to-components-in-an-internal-repository) or [Allowing access to components in a private repository](/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#allowing-access-to-components-in-an-internal-repository).
+If the workflow file is in an internal or private repository and you want to use the workflow in other repositories in the organization, you will need to allow access to the workflow from outside the repository. For more information, see [Allowing access to components in an internal repository](/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#allowing-access-to-components-in-an-internal-repository) or [Allowing access to components in a private repository](/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#allowing-access-to-components-in-a-private-repository).
 
 When you add this rule to a ruleset, in your organization settings, you specify the source repository and the workflow you want to enforce.
 

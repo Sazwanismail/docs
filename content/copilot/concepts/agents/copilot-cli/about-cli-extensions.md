@@ -90,7 +90,7 @@ Both extensions and plugins add functionality to {% data variables.copilot.copil
 * An **extension** is a single JavaScript module that you write to add tools and slash commands, backed by code that runs in your session.
 * A **plugin** is an installable package that bundles reusable components—such as agents, skills, hooks, and integrations—and can be distributed through a marketplace.
 
-For more information about plugins, see [AUTOTITLE](/copilot/concepts/agents/copilot-cli/about-cli-plugins).
+For more information about plugins, see [AUTOTITLE](/copilot/concepts/agents/about-plugins).
 
 ## Further reading
 
