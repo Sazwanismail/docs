@@ -1,6 +1,6 @@
 ---
 title: Using SSH over the HTTPS port
-intro: 'Sometimes, firewalls refuse to allow SSH connections entirely. If using [HTTPS cloning with credential caching](/github/getting-started-with-github/caching-your-github-credentials-in-git) is not an option, you can attempt to clone using an SSH connection made over the HTTPS port. Most firewall rules should allow this, but proxy servers may interfere.'
+intro: 'Sometimes, firewalls refuse to allow SSH connections entirely. If using [HTTPS cloning with credential caching](/github/getting-started-with-github/caching-your-github-credentials-in-git) it may be possible to use SSH over the HTTPS port (443) as an alternative.'
 redirect_from:
   - /articles/using-ssh-over-the-https-port
   - /github/authenticating-to-github/using-ssh-over-the-https-port
@@ -37,7 +37,7 @@ git clone ssh://git@ssh.{% data variables.product.product_url %}:443/YOUR-USERNA
 
 ## Enabling SSH connections over HTTPS
 
-If you are able to SSH into `git@ssh.{% data variables.product.product_url %}` over port 443, you can override your SSH settings to force any connection to {% data variables.location.product_location %} to run through that server and port.
+If you are able to SSH into `git@ssh.{% data variables.product.product_url %}` over port 443, you can override your SSH settings to force any connection to {% data variables.location.product_location %} to use the HTTPS port instead of the default SSH port.
 
 To set this in your SSH configuration file, edit the file at `~/.ssh/config`, and add this section:
 
@@ -70,4 +70,4 @@ that the host wasn't found in `known_hosts`, or that it was found by another nam
 ```
 
 It is safe to answer "yes" to this question, assuming that the SSH fingerprint matches
-one of {% data variables.product.prodname_dotcom %}'s published fingerprints. For the list of fingerprints, see [AUTOTITLE](/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints).
+one of {% data variables.product.prodname_dotcom %}'s published fingerprints. For the list of fingerprints, see [GitHub's SSH key fingerprints](/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints).
