@@ -356,6 +356,32 @@ describe('correctTranslatedContentStrings', () => {
   // ─── PORTUGUESE (pt) ───────────────────────────────────────────────
 
   describe('Portuguese (pt)', () => {
+    test('strips stray unclosed {% vscode %} opener with no English counterpart', () => {
+      // Confirmed in data/reusables/copilot/code-completion-switch-prereqs-vscode.md:
+      // translator inserted a stray `{% vscode %}` opener mid-sentence with no
+      // matching `{% endvscode %}`, and the English source never used this tag.
+      expect(
+        fix(
+          'Você está usando as versões mais recentes do {% vscode %} Você pode alternar os modelos.',
+          'pt',
+          'You are using the latest releases of Visual Studio Code.',
+        ),
+      ).toBe('Você está usando as versões mais recentes do Você pode alternar os modelos.')
+
+      // Leave the tag alone when it's properly closed.
+      expect(
+        fix('{% vscode %}Conteúdo{% endvscode %}', 'pt', 'You are using the latest releases.'),
+      ).toBe('{% vscode %}Conteúdo{% endvscode %}')
+
+      // Leave the tag alone when the English source also uses it (legitimate tab content).
+      expect(fix('{% vscode %}Conteúdo', 'pt', '{% vscode %}Content')).toBe('{% vscode %}Conteúdo')
+
+      // Every opener is stray when there is no closer at all, so strip all of them.
+      expect(
+        fix('a {% vscode %} b {% vscode %} c', 'pt', 'You are using the latest releases.'),
+      ).toBe('a b c')
+    })
+
     test('fixes translated data tags', () => {
       expect(fix('{% dados variables.product.github %}', 'pt')).toBe(
         '{% data variables.product.github %}',
@@ -685,6 +711,19 @@ describe('correctTranslatedContentStrings', () => {
       )
       expect(fix('{% данных reusables.foo %}', 'ru')).toBe('{% data reusables.foo %}')
       expect(fix('{% данные reusables.foo %}', 'ru')).toBe('{% data reusables.foo %}')
+    })
+
+    test('fixes fully translated "data reusables" tag prefixes', () => {
+      // "данных, многократно используемых" = "data, repeatedly used"
+      expect(fix('{% данных, многократно используемых.copilot.jetbrains-settings %}', 'ru')).toBe(
+        '{% data reusables.copilot.jetbrains-settings %}',
+      )
+      // "данных, которые можно использовать повторно" = "data that can be reused"
+      expect(
+        fix('{% данных, которые можно использовать повторно.projects.what-gets-copied %}', 'ru'),
+      ).toBe('{% data reusables.projects.what-gets-copied %}')
+      // already-correct input is left unchanged
+      expect(fix('{% data reusables.copilot.foo %}', 'ru')).toBe('{% data reusables.copilot.foo %}')
     })
 
     test('fixes broadened данных. pattern', () => {
@@ -1501,6 +1540,20 @@ describe('correctTranslatedContentStrings', () => {
   })
 
   describe('Generic fixes (all languages)', () => {
+    test('fixes reordered ifversion/endif/else back to ifversion/else/endif', () => {
+      // Confirmed corruption pattern across all 8 translated languages in
+      // data/reusables/organizations/custom-org-roles-intro.md: `{% endif %}`
+      // and `{% else %}` were swapped, producing a "tag 'else' not found"
+      // parse error.
+      expect(
+        fix('{% ifversion org-custom-role-with-repo-permissions %}A{% endif %}B{% else %}C', 'pt'),
+      ).toBe('{% ifversion org-custom-role-with-repo-permissions %}A{% else %}B{% endif %}C')
+      // Already-correct input is left unchanged.
+      expect(fix('{% ifversion ghec %}A{% else %}B{% endif %}', 'pt')).toBe(
+        '{% ifversion ghec %}A{% else %}B{% endif %}',
+      )
+    })
+
     test('strips LLM sentinel markers and preserves word boundaries', () => {
       expect(fix('Hello<|endoftext|>World', 'es')).toBe('Hello World')
       expect(fix('Hello <|endoftext|> World', 'es')).toBe('Hello World')
@@ -1610,6 +1663,9 @@ describe('correctTranslatedContentStrings', () => {
       expect(fix('["AUTOTITLE](/path)', 'es')).toBe('"[AUTOTITLE](/path)')
       expect(fix('[ AUTOTITLE](/path)', 'es')).toBe('[AUTOTITLE](/path)')
       expect(fix('[ "AUTOTITLE](/path)', 'es')).toBe('[AUTOTITLE](/path)')
+      expect(fix('[AUTOTITLE] (/path)', 'es')).toBe('[AUTOTITLE](/path)')
+      // Already-correct input is left unchanged.
+      expect(fix('[AUTOTITLE](/path)', 'es')).toBe('[AUTOTITLE](/path)')
     })
 
     test('fixes double-brace Liquid tag corruptions', () => {
@@ -2452,6 +2508,76 @@ Para más información, consulta "[AUTOTITLE](/path)".
       expect(fix(broken, 'ru')).toBe(fixed)
       // idempotent: the fix only matches the broken form
       expect(fix(fixed, 'ru')).toBe(fixed)
+    })
+  })
+
+  // ─── New patterns ───────────────────────────────────────────────────
+
+  describe('es: you-can-fork.md per-file fix', () => {
+    test('replaces leading elsif with ifversion', () => {
+      const broken = '{% elsif ghes or ghec %} Puedes bifurcar...'
+      const fixed = '{% ifversion ghes or ghec %} Puedes bifurcar...'
+      const ctx = {
+        code: 'es',
+        relativePath: 'data/reusables/repositories/you-can-fork.md',
+        skipOrphanStripping: true,
+      }
+      expect(correctTranslatedContentStrings(broken, '', ctx)).toBe(fixed)
+      // already correct input is unchanged
+      expect(correctTranslatedContentStrings(fixed, '', ctx)).toBe(fixed)
+    })
+
+    test('does not affect other es content', () => {
+      const other = '{% elsif ghes or ghec %} other content'
+      expect(fix(other, 'es')).toBe(other)
+    })
+  })
+
+  describe('fr: stray < before plan name in ifversion', () => {
+    test('removes stray < before plan name in ifversion', () => {
+      expect(fix('{% ifversion <ghec %}foo{% endif %}', 'fr')).toBe(
+        '{% ifversion ghec %}foo{% endif %}',
+      )
+      expect(fix('{% ifversion <fpt %}foo{% endif %}', 'fr')).toBe(
+        '{% ifversion fpt %}foo{% endif %}',
+      )
+      expect(fix('{% elsif <ghes %}foo{% endif %}', 'fr')).toBe('{% elsif ghes %}foo{% endif %}')
+    })
+
+    test('does not affect valid fr ifversion tags', () => {
+      expect(fix('{% ifversion ghec %}foo{% endif %}', 'fr')).toBe(
+        '{% ifversion ghec %}foo{% endif %}',
+      )
+    })
+  })
+
+  describe('fr: translated classroom reusable per-file fix', () => {
+    test('restores canonical reusable tag', () => {
+      const broken = '{% reusable (fr) classroom.vous-pouvez-créer-une-pull-request-pour-retour %}'
+      const fixed = '{% data reusables.classroom.you-can-create-a-pull-request-for-feedback %}'
+      expect(fix(broken, 'fr')).toBe(fixed)
+      // already correct is unchanged
+      expect(fix(fixed, 'fr')).toBe(fixed)
+    })
+  })
+
+  describe('ko: about-READMEs.md per-file fix', () => {
+    test('removes orphan endif before first ifversion', () => {
+      const broken = '파일{% endif %}{% ifversion fpt or ghec %}, 기여'
+      const fixed = '파일{% ifversion fpt or ghec %}, 기여'
+      const ctx = {
+        code: 'ko',
+        relativePath: 'data/reusables/repositories/about-READMEs.md',
+        skipOrphanStripping: true,
+      }
+      expect(correctTranslatedContentStrings(broken, '', ctx)).toBe(fixed)
+      // already correct is unchanged
+      expect(correctTranslatedContentStrings(fixed, '', ctx)).toBe(fixed)
+    })
+
+    test('does not affect other ko content', () => {
+      const other = 'foo{% endif %}{% ifversion fpt or ghec %}, bar'
+      expect(fix(other, 'ko')).toBe(other)
     })
   })
 })

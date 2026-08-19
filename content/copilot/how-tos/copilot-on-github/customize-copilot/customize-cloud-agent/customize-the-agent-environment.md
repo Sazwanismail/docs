@@ -29,10 +29,12 @@ You can customize {% data variables.product.prodname_copilot_short %}'s developm
 * [Give {% data variables.product.prodname_copilot_short %} a Windows development environment](#switching-copilot-to-a-windows-development-environment), instead of the default Ubuntu Linux environment
 * [Enable Git Large File Storage (LFS)](#enabling-git-large-file-storage-lfs)
 
+{% data variables.copilot.copilot_code-review_short %} also runs in an ephemeral development environment, and you can customize it in the same ways described in this article. By default, {% data variables.copilot.copilot_code-review_short %} reuses your `copilot-setup-steps.yml` file, but you can also create a dedicated `copilot-code-review.yml` file to configure {% data variables.copilot.copilot_code-review_short %}'s environment independently of {% data variables.copilot.copilot_cloud_agent %}. See [AUTOTITLE](/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#customizing-copilot-code-reviews-environment).
+
 In addition, you can:
 
 * [AUTOTITLE](/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/configure-secrets-and-variables)
-* [AUTOTITLE](/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-firewall).
+* [AUTOTITLE](/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall).
 
 > [!NOTE]
 > Organization owners can configure the default runner type for {% data variables.copilot.copilot_cloud_agent %} across all repositories in their organization, and choose whether repositories are allowed to override this default. For more information, see [AUTOTITLE](/copilot/how-tos/administer-copilot/manage-for-organization/configure-runner-for-coding-agent).
@@ -139,7 +141,7 @@ By default, {% data variables.product.prodname_copilot_short %} works in a stand
 
 You can run {% data variables.copilot.copilot_cloud_agent %} on self-hosted runners. You may want to do this to match how you run CI/CD workflows on {% data variables.product.prodname_actions %}, or to give {% data variables.product.prodname_copilot_short %} access to internal resources on your network.
 
-We recommend that you only use {% data variables.copilot.copilot_cloud_agent %} with ephemeral, single-use runners that are not reused for multiple jobs. Most customers set this up using ARC (Actions Runner Controller) or the {% data variables.product.prodname_actions %} Runner Scale Set Client. For more information, see [AUTOTITLE](/actions/reference/runners/self-hosted-runners#supported-autoscaling-solutions).
+We recommend that you only use {% data variables.copilot.copilot_cloud_agent %} with ephemeral, single-use runners that are not reused for multiple jobs. Most customers set this up using ARC (Actions Runner Controller) or the {% data variables.product.prodname_actions %} Runner Scale Set Client. For more information, see [AUTOTITLE](/actions/reference/runners/self-hosted-runners#autoscaling).
 
 > [!NOTE]
 > {% data variables.copilot.copilot_cloud_agent %} is only compatible with Ubuntu x64 and Windows 64-bit runners. Runners with macOS or other operating systems are not supported.
@@ -150,7 +152,7 @@ We recommend that you only use {% data variables.copilot.copilot_cloud_agent %} 
 
     {% data reusables.copilot.cloud-agent-required-hosts %}
 
-1. Disable {% data variables.copilot.copilot_cloud_agent %}'s integrated firewall in your repository settings. The firewall is not compatible with self-hosted runners. Unless this is disabled, use of {% data variables.copilot.copilot_cloud_agent %} will be blocked. For more information, see [AUTOTITLE](/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-firewall).
+1. Disable {% data variables.copilot.copilot_cloud_agent %}'s integrated firewall in your repository settings. The firewall is not compatible with self-hosted runners. Unless this is disabled, use of {% data variables.copilot.copilot_cloud_agent %} will be blocked. For more information, see [AUTOTITLE](/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall).
 1. In your `copilot-setup-steps.yml` file, set the `runs-on` attribute to your ARC-managed scale set name:
 
    ```yaml
@@ -203,4 +205,4 @@ jobs:
 ## Further reading
 
 * [AUTOTITLE](/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/configure-secrets-and-variables)
-* [AUTOTITLE](/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-firewall)
+* [AUTOTITLE](/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall)
